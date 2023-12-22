@@ -19,6 +19,7 @@
     "@types/fingerprintjs2": "^2.0.0",
     "@types/mdx": "^2.0.10",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "ahooks": "^3.7.8",
     "antd": "^5.12.4",
     "fingerprintjs2": "^2.1.4",
