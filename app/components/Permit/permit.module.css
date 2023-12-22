@@ -1,0 +1,39 @@
+.permit{
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-blue-bg);
+}
+
+.copyright_owner,.article_link,.license_agreement{
+    padding: 6px 0px;
+    display: flex;
+}
+
+.icon{
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    background-color: var(--purple-border-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--txt-w-pure);
+    margin-right: 16px;
+}
+
+.text{
+    font-size: 14px;
+    color: var(--b-alpha-60);
+    line-height: 28px;
+}
+
+.link{
+    color: var(--color-blue);
+}
+
+.link:hover{
+    text-decoration: underline;
+}

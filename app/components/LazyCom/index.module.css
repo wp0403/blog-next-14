@@ -1,0 +1,44 @@
+.lazyImg{
+  position: relative;
+  display: inline-block;
+}
+
+.lazyImg :global .ant-image{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.photography_image {
+  object-fit: cover;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.photography_image_div{
+  border: 4px solid var(--bg-w-pure);
+  box-sizing: border-box;
+}
+
+.photography_image_pa{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.photography_image_antd{
+  object-fit: cover;
+  padding: 4px;
+  box-sizing: border-box;
+  display: none;
+}
+
+.photography_image_auto{
+  height: auto !important;
+}
+
+@media screen and (max-width: 600px) {
+  .photography_image {
+    padding: 2px;
+  }
+}

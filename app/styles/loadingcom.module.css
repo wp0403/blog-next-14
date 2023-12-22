@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan&display=swap");
+.preloader_box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9999;
+  transition: opacity 0.65s;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.preloader_box_none{
+  animation: none 0.3s ease-out;
+  animation-fill-mode: forwards; 
+}
+
+.preloader_left{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: var(--purple-primary);
+}
+
+.preloader_left_up{
+  animation: fadeIn1 0.3s ease-out;
+  animation-fill-mode: forwards; 
+}
+
+.preloader_left_down{
+  animation: fadeUp1 0.3s ease-out;
+  animation-fill-mode: forwards; 
+}
+
+.preloader_right{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: var(--purple-primary);
+}
+
+.preloader_right_up{
+  animation: fadeIn2 0.3s ease-out;
+  animation-fill-mode: forwards; 
+}
+
+.preloader_right_down{
+  animation: fadeUp2 0.3s ease-out;
+  animation-fill-mode: forwards; 
+}
+
+.preloader {
+  display: flex;
+  color: white;
+  font-size: 5em;
+  font-family: "Baloo Bhaijaan", "initial"; /* text-transform: uppercase; */
+}
+
+.preloader_up{
+  animation: amplify 0.3s ease-out;
+  animation-fill-mode: forwards; 
+}
+
+.preloader_down{
+  animation: reduce 0.3s ease-out;
+  animation-fill-mode: forwards; 
+}
+
+.preloader .inner {
+  text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb,
+    0 6px transparent, 0 7px transparent, 0 8px transparent, 0 9px transparent,
+    0 10px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(20px);
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.preloader .inner:nth-child(1) {
+  animation: prebounce 0.4s infinite alternate;
+}
+.preloader .inner:nth-child(2) {
+  animation: prebounce 0.4s 0.1s infinite alternate;
+}
+.preloader .inner:nth-child(3) {
+  animation: prebounce 0.4s 0.2s infinite alternate;
+}
+.preloader .inner:nth-child(4) {
+  animation: prebounce 0.4s 0.3s infinite alternate;
+}
+.preloader .inner:nth-child(5) {
+  animation: prebounce 0.4s 0.4s infinite alternate;
+}
+.preloader .inner:nth-child(6) {
+  animation: prebounce 0.4s 0.5s infinite alternate;
+}
+.preloader .inner:nth-child(7) {
+  animation: prebounce 0.4s 0.6s infinite alternate;
+}
+@keyframes prebounce {
+  to {
+    text-shadow: 0 1px #bbb, 0 2px #bbb, 0 3px #bbb, 0 4px #bbb, 0 5px #bbb,
+      0 6px #bbb, 0 7px #bbb, 0 8px #bbb, 0 9px #bbb,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .preloader {
+    font-size: 3em;
+  }
+}
+
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp1 {
+  0% {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeUp2 {
+  0% {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes reduce {
+  0% {
+    opacity: 1;
+    transform: scale(1,1); 
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8,0.8); 
+  }
+}
+
+@keyframes amplify {
+  0% {
+    opacity: 0;
+    transform: scale(0.8,0.8); 
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1,1); 
+  }
+}
+
+@keyframes none {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+    z-index: -1;
+    visibility: hidden;
+  }
+}

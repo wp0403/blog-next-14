@@ -1,0 +1,90 @@
+.archive {
+  width: 100%;
+  padding: 92px 0 22px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-w-pure);
+  position: relative;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
+}
+
+.archive_content {
+  width: 60%;
+  max-width: 800px;
+  flex:1;
+  min-height: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.archive_item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.year {
+  width: 100%;
+  line-height: 34px;
+  margin: 18px 0;
+  position: relative;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--b-alpha-80);
+}
+
+.class_item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 30px;
+  margin-bottom: 15px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.class_item_time {
+  width: 86px;
+  color: var(--b-alpha-40);
+  letter-spacing: 0;
+}
+
+.class_item_name {
+  flex: 1;
+  color: var(--b-alpha-80);
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.class_item:hover {
+  transform: translateX(8px);
+}
+
+.class_item:hover .class_item_time,
+.class_item:hover .class_item_name {
+  color: var(--purple-primary);
+}
+
+@media screen and (max-width: 1000px) {
+  .archive_content{
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .archive_content{
+    width: 100%;
+  }
+}

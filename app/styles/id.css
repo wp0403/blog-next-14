@@ -1,0 +1,34 @@
+.dark #bg_mask {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav_item_text.nav_item_block{
+  color: var(--b-alpha-60);
+  font-weight: 400;
+}
+
+.nav_active_border{
+  border-bottom: 1px solid var(--b-alpha-5);
+}
+
+#nav_mobile_list .nav_item_text,
+.nav_active .nav_item_text {
+  color: var(--b-alpha-60);
+  font-weight: 400;
+}
+
+#nav_mobile_list .nav_item_text:hover,
+.nav_active .nav_item_text:hover {
+  color: var(--b-alpha-80);
+}
+
+/* 当前选中导航的样式 */
+/* #nev_item_active{
+  background-color: var(--b-alpha-5);
+  border-radius: 5px;
+} */
+
+/* 打字机光标颜色 */
+/* .typed-cursor{
+  color: var(--txt-w-pure);
+} */

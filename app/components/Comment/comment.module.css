@@ -1,0 +1,14 @@
+.tcomment{
+    width: 100%;
+    /* padding: 16px; */
+    /* background-color: var(--purple-border); */
+    /* border-radius: 8px; */
+    margin-bottom: 24px;
+}
+
+.border{
+    width: 100%;
+    height: 2px;
+    background-color: var(--b-alpha-10);
+    margin-bottom: 24px;
+}

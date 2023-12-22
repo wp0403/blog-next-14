@@ -1,0 +1,94 @@
+/* 分页器 开始 */
+.ant-pagination {
+  transition: 0.4s;
+}
+
+.ant-pagination .ant-pagination-item a,
+.ant-pagination .ant-pagination-next .ant-pagination-item-link,
+.ant-pagination .ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination .ant-pagination-item-container .ant-pagination-item-ellipsis {
+  color: var(--b-alpha-80) !important;
+}
+
+.ant-pagination .ant-pagination-item,
+.ant-pagination .ant-pagination-next,
+.ant-pagination .ant-pagination-prev {
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+
+.ant-pagination .ant-pagination-item:hover,
+.ant-pagination .ant-pagination-next:hover,
+.ant-pagination .ant-pagination-prev:hover {
+  background-color: var(--purple-text-hover) !important;
+  color: var(--txt-w-pure);
+  font-weight: bold;
+  border-radius: 50% !important;
+  overflow: hidden;
+  border: none;
+}
+
+.ant-pagination .ant-pagination-item:hover a {
+  color: var(--txt-w-pure);
+}
+
+.ant-pagination .ant-pagination-item-active {
+  background-color: var(--purple-text-hover);
+  color: var(--txt-w-pure);
+  font-weight: bold;
+  border-radius: 50% !important;
+  border: none;
+}
+
+.ant-pagination .ant-pagination-item-active:hover {
+  color: var(--txt-w-pure) !important;
+}
+
+.ant-pagination .ant-pagination-disabled .ant-pagination-item-link,
+.ant-pagination .ant-pagination-disabled:hover {
+  color: var(--b-alpha-40) !important;
+  background-color: transparent !important;
+}
+/* 分页器 结束 */
+
+/* 输入框 开始 */
+.ant-input::placeholder {
+  color: var(--b-alpha-60) !important;
+}
+/* 输入框 结束 */
+
+/* 图片 开始 */
+:is(.ant-image-preview-root .ant-image-preview-mask){
+  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+}
+/* 图片 结束 */
+
+/* 评论 开始 */
+.el-input-group__prepend,
+.el-input__inner {
+  color: var(--b-alpha-80) !important;
+}
+
+.el-textarea__inner,
+.el-input__count,
+.tk-submit-action-icon {
+  color: var(--b-alpha-70) !important;
+}
+
+.tk-preview{
+  color: var(--b-alpha-60) !important;
+}
+
+.tk-comments-container{
+  color: var(--b-alpha-60) !important;
+}
+
+.tk-ruser{
+  color: var(--purple-text);
+}
+
+.tk-content p{
+  color: var(--b-alpha-90) !important;
+}
+/* 评论 结束 */

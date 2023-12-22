@@ -1,0 +1,94 @@
+.tree_hole {
+  width: 100%;
+  flex: 1;
+  padding-top: 70px;
+  background-color: var(--bg-w-pure);
+}
+
+.content {
+  width: 60%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.year {
+  width: 100%;
+  line-height: 34px;
+  margin: 24px 0;
+  position: relative;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--b-alpha-80);
+}
+
+.tree_item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  margin-bottom: 18px;
+  transition: 0.4s;
+}
+
+.tree_item_top {
+  width: 100%;
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.tree_item_time {
+  width: 86px;
+  flex-shrink: 0;
+  color: var(--b-alpha-40);
+  letter-spacing: 0;
+}
+
+.tree_item_type {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-style: oblique;
+  font-size: 14px;
+  color: var(--b-alpha-70);
+}
+
+.tree_item_content {
+  color: var(--b-alpha-80);
+  white-space: pre-wrap;
+}
+
+.tree_item:hover {
+  transform: translateX(8px);
+}
+
+.tree_item:hover .tree_item_time,
+.tree_item:hover .tree_item_content,
+.tree_item:hover .tree_item_type {
+  color: var(--purple-primary);
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    width: 100%;
+  }
+}
