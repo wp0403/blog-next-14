@@ -3,10 +3,13 @@
   flex: 1;
   padding-top: 70px;
   background-color: var(--bg-w-pure);
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
   width: 60%;
+  flex: 1;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
