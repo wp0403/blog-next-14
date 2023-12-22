@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 项目名称
 
-## Getting Started
+这是一个基于nextjs写的个人博客项目，博客内容丰富，全项目代码公开，欢迎参考
 
-First, run the development server:
+## 功能特点
+
+[🟢] [个人主页](https://wp-boke.work)
+
+[🟢] [文章列表](https://wp-boke.work/blog/1)
+
+[🟢] [文归档](https://wp-boke.work/archive)
+
+[🟢] [树洞](https://wp-boke.work/tree-hole)
+
+[🟢] [摄影](https://wp-boke.work/photography)
+
+[🟢] [关于](https://wp-boke.work/about)
+
+[🟢] [我的简历](https://wp-boke.work/resume)
+
+[🟢] [访客列表](https://wp-boke.work/visitor)
+
+[🟢] [友情链接](https://wp-boke.work/friendly-links)
+
+[🟢] [更多](https://wp-boke.work/more)
+
+## 技术栈
+
+- Next.js：[Next.js](https://nextjs.org/) 是一个使用 React 进行服务端渲染的框架。
+- Vercel：[Vercel](https://vercel.com/) 是一个用于快速部署静态网站和服务器渲染应用程序的平台。
+- Egg.js：[Egg.js](https://eggjs.org/) 是一个基于 Node.js 和 Koa 的企业级后端开发框架。
+- MySQL：[MySQL](https://www.mysql.com/) 是一个流行的关系型数据库管理系统。
+
+## 开始使用
+
+### 环境要求
+
+列出运行项目所需的软件和环境要求。
+
+### 安装依赖
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+node 18^
+
+pnpm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 配置
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+SERVER_NAME='vercel'
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 启动项目
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 构建项目
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 部署
+### Vercel 部署(https://vercel.com/dashboard)
 
-## Deploy on Vercel
+1. 在 Vercel 上创建一个新项目。
+2. 配置环境变量并设置相关的值。
+3. 部署项目到 Vercel。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 贡献
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+欢迎贡献你的代码，以及提交问题和建议。请遵循贡献指南。
+
+## 许可证
+
+采用 [MIT licensed](LICENSE) 许可协议.
