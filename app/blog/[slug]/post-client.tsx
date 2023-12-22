@@ -148,7 +148,7 @@ export default function BlogDetails({ post }) {
                 keyword
                   ? setSearchPage(v)
                   : router.push(
-                      isType ? `/blog-type/${type}/${v}` : `/blog/${v}`
+                      isType ? `/blog-classify/${type}/${v}` : `/blog/${v}`
                     )
               }
             />
@@ -176,7 +176,7 @@ export default function BlogDetails({ post }) {
                   >
                     <div
                       className={style.blog_class_item_name}
-                      onClick={() => router.push(`/blog-type/${v?.type}/1`)}
+                      onClick={() => router.push(`/blog-classify/${v?.type}/1`)}
                     >
                       {v?.label}
                     </div>

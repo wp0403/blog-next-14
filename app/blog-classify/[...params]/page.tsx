@@ -1,5 +1,5 @@
 import getData from "@utils/request";
-import PostClient from "../../../blog/[slug]/post-client";
+import PostClient from "../../blog/[slug]/post-client";
 
 export const dynamicParams = false;
 
@@ -20,15 +20,16 @@ export async function generateStaticParams() {
     });
   });
 
-  return arr.map((v) => ({ params: { page: v.page, type: v.type } }));
+  return arr.map((v) => ([v.type, v.page]));
 }
 
 // 获取数据
-async function getPost(params) {
+async function getPost({params}) {
+  const [type, page] = params;
   // 获取页码
   const post1 = await getData({
     type: "blog_PageList",
-    params: { id: params.type },
+    params: { id: type },
   });
 
   const pageList = [] as string[];
@@ -38,15 +39,15 @@ async function getPost(params) {
   // 调用外部 API 获取内容
   const posts2 = await getData({
     type: "blog_List",
-    params: { id: params.type, page: params.page },
+    params: { id: type, page: page },
   });
   const classifyNum = await getData({ type: "blog_ClassifyNum" });
 
   return {
-    page: params.page,
+    page: page,
     totalPage: post1.data,
     pageList,
-    type: params.type,
+    type: type,
     classifyNum: classifyNum.data,
     isType: true,
     ...posts2,
