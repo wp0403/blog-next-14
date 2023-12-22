@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { LayoutContextProvider } from "@store/layoutStore";
 import NavBar from "@components/NavBar";
 import Footer from "@components/Footer";
@@ -32,6 +33,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </LayoutContextProvider>
+        <Analytics />
       </body>
     </html>
   );
