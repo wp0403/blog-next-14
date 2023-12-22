@@ -26,7 +26,7 @@ export default async function BlogDetails({ params }) {
   const source = await serialize(data.content, {
     scope: {},
     mdxOptions: {
-      development: true,
+      development: false,
       remarkPlugins: [remarkMath, remarkGfm],
       rehypePlugins: [],
     },
