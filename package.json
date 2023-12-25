@@ -33,6 +33,7 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^6.0.0",
     "rss": "^1.2.2",
+    "sharp": "^0.33.1",
     "sitemap": "^7.1.1",
     "twikoo": "^1.6.27",
     "typed.js": "^2.1.0"

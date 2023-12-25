@@ -1,6 +1,7 @@
 import { objectToQueryString } from "@utils/dataUtils";
 
 const BASE_URL = "https://shimmer.wp-boke.work/api";
+const TEST_BASE_URL = "http://7001";
 
 const apiObj = {
   // 文章列表
