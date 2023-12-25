@@ -273,3 +273,9 @@
     height: 68px;
   }
 }
+
+@media print{
+  .blog_right{
+    display: none;
+  }
+}

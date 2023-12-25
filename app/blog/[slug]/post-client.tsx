@@ -13,6 +13,7 @@ import {
 } from "@utils/elementUtils";
 import { useRouter } from "next/navigation";
 import { formatDate, hasUnicode, unicodeToEmoji } from "@utils/dataUtils";
+import getDataApi from "@utils/request";
 import style from "../blog.module.css";
 
 export default function BlogDetails({ post }) {
@@ -35,17 +36,14 @@ export default function BlogDetails({ post }) {
   const getDate = async () => {
     if (!keyword || loading) return;
     setLoading(true);
-    const res = await fetch(
-      `https://shimmer.wp-boke.work/api/getSearchClassifyList?page=${getSearchPage()}&keyword=${getKeyword()}`
-      // `http://localhost:7001/getSearchClassifyList?page=${getSearchPage()}&keyword=${getKeyword()}`
-    );
-    const res1 = await fetch(
-      `https://shimmer.wp-boke.work/api/getClassifyListPage?keyword=${getKeyword()}`
-      // `http://localhost:7001/getClassifyListPage?keyword=${getKeyword()}`
-    );
-
-    const posts = await res.json();
-    const posts1 = await res1.json();
+    const posts = await getDataApi({
+      type: "blog_KeyworkList",
+      params: { keyword: getKeyword(), page: getSearchPage() },
+    });
+    const posts1 = await getDataApi({
+      type: "blog_PageList",
+      params: { keyword: getKeyword() },
+    });
     setSearchList(posts.data);
     setSearchPage(posts1.data);
     setLoading(false);

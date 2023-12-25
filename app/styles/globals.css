@@ -113,7 +113,7 @@ ol {
   list-style: decimal inherit;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -129,7 +129,7 @@ body {
   font-family: var(--ct-body-font-family);
 }
 
-body{
+body {
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
@@ -161,5 +161,11 @@ body{
 @media screen and (max-width: 900px) {
   * {
     letter-spacing: 0;
+  }
+}
+
+@media print {
+  body {
+    height: auto;
   }
 }

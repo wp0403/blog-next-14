@@ -13,6 +13,8 @@ const apiObj = {
   blog_ClassifyDetail: "/getClassifyDetails",
   // 获取上一篇和下一篇
   blog_NextOrPrev: "/getClassifyDetailsFooter",
+  // 关键字获取列表
+  blog_KeyworkList: "/getSearchClassifyList",
   // 获取文归档列表
   archive_list: "/getArchive",
   // 获取友情链接列表
@@ -21,6 +23,8 @@ const apiObj = {
   photography_List: "/getPhotographyList",
   // 获取树洞列表
   secret_List: "/getSecretList",
+  // 获取访客列表
+  visitor_List: "/getVisitorList",
 };
 
 type ApiKey = keyof typeof apiObj;

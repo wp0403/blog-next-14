@@ -1,5 +1,6 @@
 import fs from "fs";
 import RSS from "rss";
+import getDataApi from "@utils/request";
 
 export async function GET(req: Request, res: Response) {
   const feed = new RSS({
@@ -12,10 +13,7 @@ export async function GET(req: Request, res: Response) {
   });
 
   // 调用外部 API 获取内容
-  const classifyObj = await fetch(
-    `https://shimmer.wp-boke.work/api/getClassifyList?page=`
-  );
-  const classifyList = (await classifyObj.json()).data;
+  const classifyList = (await getDataApi({ type: "blog_List" })).data;
 
   classifyList?.map((v) => {
     feed.item({

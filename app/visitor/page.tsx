@@ -12,6 +12,7 @@ import {
 } from "@/utils/elementUtils";
 import { formatDate } from "@/utils/dataUtils";
 import { getRandomColor } from "@utils/dataUtils";
+import getDataApi from "@utils/request";
 import style from "./visitor.module.css";
 
 const Visitor = () => {
@@ -27,10 +28,10 @@ const Visitor = () => {
   }, []);
 
   const getData = async () => {
-    const res = await fetch(
-      `https://shimmer.wp-boke.work/api/getVisitorList?page=${getPage()}`
-    );
-    const posts = await res.json();
+    const posts = await getDataApi({
+      type: "visitor_List",
+      params: { page: getPage() },
+    });
 
     setList(posts.data);
     setTotal(posts.meta.total);

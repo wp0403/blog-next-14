@@ -115,3 +115,10 @@
     align-items: flex-start;
   }
 }
+
+@media print {
+  .footer{
+    display: none;
+  }
+}
+
