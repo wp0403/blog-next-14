@@ -1,8 +1,10 @@
 .permit{
     width: 100%;
+    margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
     background-color: var(--color-blue-bg);
+    max-width: 800px;
 }
 
 .copyright_owner,.article_link,.license_agreement{

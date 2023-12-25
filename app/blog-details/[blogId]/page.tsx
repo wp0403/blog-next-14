@@ -26,10 +26,10 @@ export default async function BlogDetails({ params }) {
   const source = await serialize(data.content, {
     scope: {},
     mdxOptions: {
-      development: false,
+      development: process.env.NODE_ENV === "development",
       remarkPlugins: [remarkMath, remarkGfm],
       rehypePlugins: [],
     },
   });
-  return <PostClient data={data} source={source} />;
+  return source ? <PostClient data={data} source={source} /> : "";
 }
