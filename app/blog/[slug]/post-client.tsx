@@ -37,11 +37,11 @@ export default function BlogDetails({ post }) {
     if (!keyword || loading) return;
     setLoading(true);
     const posts = await getDataApi({
-      type: "blog_KeyworkList",
+      type: "all_blog_KeyworkList",
       params: { keyword: getKeyword(), page: getSearchPage() },
     });
     const posts1 = await getDataApi({
-      type: "blog_PageList",
+      type: "all_blog_PageList",
       params: { keyword: getKeyword() },
     });
     setSearchList(posts.data);

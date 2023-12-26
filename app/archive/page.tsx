@@ -14,7 +14,7 @@ export default function Archive() {
   const [data, setDate] = useState<any[]>([]);
 
   const init = async () => {
-    const { data } = await getData({ type: "archive_list" });
+    const { data } = await getData({ type: "all_blog_archive_list" });
 
     setDate(data);
   };

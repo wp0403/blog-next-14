@@ -29,7 +29,7 @@ const Visitor = () => {
 
   const getData = async () => {
     const posts = await getDataApi({
-      type: "visitor_List",
+      type: "all_user_visitor_List",
       params: { page: getPage() },
     });
 

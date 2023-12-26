@@ -13,7 +13,7 @@ export async function GET(req: Request, res: Response) {
   });
 
   // 调用外部 API 获取内容
-  const classifyList = (await getDataApi({ type: "blog_List" })).data;
+  const classifyList = (await getDataApi({ type: "all_blog_List" })).data;
 
   classifyList?.map(
     (v: {

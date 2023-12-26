@@ -15,7 +15,7 @@ const ClassifyPrevOrNext = (props: Props) => {
 
   const getData = useCallback(async () => {
     const posts = await getDataApi({
-      type: "blog_NextOrPrev",
+      type: "all_blog_NextOrPrev",
       params: { id: id },
     });
     setData(posts.data);

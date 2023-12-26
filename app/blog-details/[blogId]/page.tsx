@@ -8,14 +8,14 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   // 调用外部 API 获取内容
-  const res = await getData({ type: "blog_List" });
+  const res = await getData({ type: "all_blog_List" });
 
   return res.data.map(({ id }) => ({ blogId: id.toString() }));
 }
 
 async function getPost(params: { blogId: string | number }) {
   return await getData({
-    type: "blog_ClassifyDetail",
+    type: "all_blog_ClassifyDetail",
     params: { id: params.blogId },
   });
 }

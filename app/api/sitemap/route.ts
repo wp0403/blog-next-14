@@ -4,7 +4,7 @@
  * @Author: WangPeng
  * @Date: 2023-04-24 15:00:43
  * @LastEditors: WangPeng
- * @LastEditTime: 2023-12-25 16:36:55
+ * @LastEditTime: 2023-12-26 17:19:35
  */
 import fs from "fs";
 import { SitemapStream, streamToPromise } from "sitemap";
@@ -31,7 +31,7 @@ export async function GET(req: Request, res: Response) {
   pages?.map((v) => sitemapStream.write({ url: `${v}` }));
 
   // 调用外部 API 获取内容
-  const classifyList = (await getDataApi({ type: "blog_List" })).data;
+  const classifyList = (await getDataApi({ type: "all_blog_List" })).data;
 
   classifyList?.map((v) =>
     sitemapStream.write({

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
  
 const FriendlyLinks = async () => {
-  const { data } = await getData({type: 'friendly_Links'});
+  const { data } = await getData({type: 'all_user_friendly_Links'});
 
   return <PostClient data={data} />;
 };

@@ -31,7 +31,7 @@ const Photography = () => {
 
   const getData = async () => {
     const posts = await getDataApi({
-      type: "photography_List",
+      type: "all_photography_List",
       params: { page: getPage(), page_size: page_size },
     });
     setData(posts.data);

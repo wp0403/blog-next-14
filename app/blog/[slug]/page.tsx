@@ -6,7 +6,7 @@ export const dynamicParams = false;
 // 动态路由
 export async function generateStaticParams() {
   const posts = await getData({
-    type: "blog_PageList",
+    type: "all_blog_PageList",
     config: { next: { revalidate: 6000 } },
   });
 
@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 // 获取数据
 async function getPost(params: { slug: any }) {
   const posts1 = await getData({
-    type: "blog_PageList",
+    type: "all_blog_PageList",
     config: { next: { revalidate: 6000 } },
   });
 
@@ -31,12 +31,12 @@ async function getPost(params: { slug: any }) {
   }
 
   const posts2 = await getData({
-    type: "blog_List",
+    type: "all_blog_List",
     params: { page: params.slug },
   });
 
   const classifyNum = await getData({
-    type: "blog_ClassifyNum",
+    type: "all_blog_ClassifyNum",
   });
 
   return {

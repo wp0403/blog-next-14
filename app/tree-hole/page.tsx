@@ -34,7 +34,7 @@ export default function TreeHole() {
     if (getTotalPages() !== 0 && getTotalPages() < getPage()) return;
     setLoading(true);
     const posts = await getDataApi({
-      type: "secret_List",
+      type: "all_secret_List",
       params: { page: getPage(), page_size: page_size },
     });
     setData((a) => distinctObjectMap([...a, ...posts.data], "id"));

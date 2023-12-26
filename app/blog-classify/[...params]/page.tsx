@@ -6,7 +6,7 @@ export const dynamicParams = false;
 // 动态路由
 export async function generateStaticParams() {
   // 调用外部 API 获取内容
-  const classifyNum = await getData({ type: "blog_ClassifyNum" });
+  const classifyNum = await getData({ type: "all_blog_ClassifyNum" });
 
   const arr = [] as any[];
   classifyNum.data?.classifyNum?.forEach((v) => {
@@ -28,7 +28,7 @@ async function getPost({ params }) {
   const [type, page] = params;
   // 获取页码
   const post1 = await getData({
-    type: "blog_PageList",
+    type: "all_blog_PageList",
     params: { id: type },
   });
 
@@ -38,10 +38,10 @@ async function getPost({ params }) {
   }
   // 调用外部 API 获取内容
   const posts2 = await getData({
-    type: "blog_List",
+    type: "all_blog_List",
     params: { id: type, page: page },
   });
-  const classifyNum = await getData({ type: "blog_ClassifyNum" });
+  const classifyNum = await getData({ type: "all_blog_ClassifyNum" });
 
   return {
     page: page,

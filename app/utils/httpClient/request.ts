@@ -1,8 +1,10 @@
 import { objectToQueryString } from "@utils/dataUtils";
 import apis from "./apis";
 
-const BASE_URL = "https://shimmer.wp-boke.work/api";
-const TEST_BASE_URL = "http://7001";
+const baseObj = {
+  all: "https://shimmer.wp-boke.work/api",
+  apiRender: "https://api-render.wp-boke.work",
+};
 
 type ApiKey = keyof typeof apis;
 
@@ -18,6 +20,8 @@ const getData = async ({
   params?: { [key: string]: any } | null | undefined;
   config?: RequestInit | undefined;
 }) => {
+  const BASE_URL = baseObj[type.split("_")[0]];
+  // 最终请求
   const res = await fetch(
     `${BASE_URL}${apis[type]}${
       params ? `?${objectToQueryString(params)}` : ""
