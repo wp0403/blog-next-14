@@ -7,7 +7,7 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@utils/elementUtils";
-import getData from "@utils/request";
+import getData from "@/utils/httpClient/request";
 import style from "./archive.module.css";
 
 export default function Archive() {

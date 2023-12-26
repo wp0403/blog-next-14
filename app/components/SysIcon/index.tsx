@@ -1,4 +1,5 @@
-import { createFromIconfontCN } from '@ant-design/icons';
+"use client";
+import { createFromIconfontCN } from "@ant-design/icons";
 
 const SysIcon = createFromIconfontCN({
   scriptUrl:

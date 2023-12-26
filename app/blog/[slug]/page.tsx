@@ -1,4 +1,4 @@
-import getData from "@utils/request";
+import getData from "@/utils/httpClient/request";
 import PostClient from "./post-client";
 
 export const dynamicParams = false;

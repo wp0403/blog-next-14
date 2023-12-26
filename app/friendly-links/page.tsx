@@ -1,6 +1,6 @@
 import PostClient from './post-client'
 import type { Metadata } from 'next'
-import getData from '@utils/request'
+import getData from "@/utils/httpClient/request";
  
 export const metadata: Metadata = {
   title: '友情链接',

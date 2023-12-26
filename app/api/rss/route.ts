@@ -1,6 +1,6 @@
 import fs from "fs";
 import RSS from "rss";
-import getDataApi from "@utils/request";
+import getDataApi from "@/utils/httpClient/request";
 
 export async function GET(req: Request, res: Response) {
   const feed = new RSS({
@@ -15,15 +15,23 @@ export async function GET(req: Request, res: Response) {
   // 调用外部 API 获取内容
   const classifyList = (await getDataApi({ type: "blog_List" })).data;
 
-  classifyList?.map((v) => {
-    feed.item({
-      title: v.title,
-      description: v.desc,
-      url: `https://wp-boke.work/blog-details/${v.id}`,
-      author: v.userInfo?.name,
-      date: v.time_str,
-    });
-  });
+  classifyList?.map(
+    (v: {
+      title: string;
+      desc: string;
+      id: string | number;
+      userInfo: { name: string };
+      time_str: string;
+    }) => {
+      feed.item({
+        title: v.title,
+        description: v.desc,
+        url: `https://wp-boke.work/blog-details/${v.id}`,
+        author: v.userInfo?.name,
+        date: v.time_str,
+      });
+    }
+  );
 
   const rssContent = feed.xml();
 

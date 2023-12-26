@@ -1,7 +1,7 @@
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import getData from "@utils/request";
+import getData from "@/utils/httpClient/request";
 import PostClient from "./post-client";
 
 export const dynamicParams = false;
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   return res.data.map(({ id }) => ({ blogId: id.toString() }));
 }
 
-async function getPost(params) {
+async function getPost(params: { blogId: string | number }) {
   return await getData({
     type: "blog_ClassifyDetail",
     params: { id: params.blogId },

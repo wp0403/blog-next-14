@@ -9,7 +9,7 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@utils/elementUtils";
-import getDataApi from "@utils/request";
+import getDataApi from "@/utils/httpClient/request";
 import { changeTreeData, distinctObjectMap } from "@utils/dataUtils";
 import VirtuallyItem from "@components/VirtuallyItem";
 import style from "./treehole.module.css";

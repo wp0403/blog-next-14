@@ -13,7 +13,7 @@ import {
 } from "@utils/elementUtils";
 import { useRouter } from "next/navigation";
 import { formatDate, hasUnicode, unicodeToEmoji } from "@utils/dataUtils";
-import getDataApi from "@utils/request";
+import getDataApi from "@/utils/httpClient/request";
 import style from "../blog.module.css";
 
 export default function BlogDetails({ post }) {

@@ -3,7 +3,7 @@ import { useGetState, useDebounceEffect, useMount } from "ahooks";
 import { Image, Pagination, Spin } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import usePageSize from "@utils/CustomHooks/usePageSize";
-import getDataApi from "@utils/request";
+import getDataApi from "@/utils/httpClient/request";
 import { formatDate } from "@utils/dataUtils";
 import {
   addNavItemStyle,

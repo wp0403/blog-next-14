@@ -8,7 +8,7 @@
  */
 import fs from "fs";
 import { SitemapStream, streamToPromise } from "sitemap";
-import getDataApi from "@utils/request";
+import getDataApi from "@/utils/httpClient/request";
 
 export async function GET(req: Request, res: Response) {
   // Create a Sitemap stream

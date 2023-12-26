@@ -12,7 +12,7 @@ import {
 } from "@/utils/elementUtils";
 import { formatDate } from "@/utils/dataUtils";
 import { getRandomColor } from "@utils/dataUtils";
-import getDataApi from "@utils/request";
+import getDataApi from "@/utils/httpClient/request";
 import style from "./visitor.module.css";
 
 const Visitor = () => {

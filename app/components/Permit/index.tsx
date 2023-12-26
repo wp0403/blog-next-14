@@ -1,3 +1,5 @@
+"use client";
+
 /*
  * @Descripttion:知识共享许可协议
  * @version:
@@ -6,7 +8,7 @@
  * @LastEditors: WangPeng
  * @LastEditTime: 2023-05-24 15:40:07
  */
-"use client"
+
 import Link from "next/link";
 import React from "react";
 import style from "./permit.module.css";

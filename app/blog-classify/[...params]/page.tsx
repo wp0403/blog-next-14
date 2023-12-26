@@ -1,4 +1,4 @@
-import getData from "@utils/request";
+import getData from "@/utils/httpClient/request";
 import PostClient from "../../blog/[slug]/post-client";
 
 export const dynamicParams = false;
@@ -20,11 +20,11 @@ export async function generateStaticParams() {
     });
   });
 
-  return arr.map((v) => ([v.type, v.page]));
+  return arr.map((v) => [v.type, v.page]);
 }
 
 // 获取数据
-async function getPost({params}) {
+async function getPost({ params }) {
   const [type, page] = params;
   // 获取页码
   const post1 = await getData({

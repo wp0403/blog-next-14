@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
-import getDataApi from "@utils/request";
+import getDataApi from "@/utils/httpClient/request";
 import style from "./classifyPrevOrNext.module.css";
 
 type Props = {
