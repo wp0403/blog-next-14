@@ -13,6 +13,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "img.foreverblog.cn",
       },
+      {
+        protocol: "http",
+        hostname: "cdn-hw-static2.shanhutech.cn",
+      },
+      {
+        protocol: "https",
+        hostname: "api-render.wp-boke.work",
+      },
     ],
   },
   async rewrites() {

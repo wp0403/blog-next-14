@@ -98,6 +98,62 @@
   padding: 70px 0;
 }
 
+.page_box{
+  width: 100%;
+  background-color: var(--w-alpha-80);
+  display: flex;
+  flex-direction: column;
+  padding: 70px 0;
+  backdrop-filter: blur(10px);
+}
+
+.page_list{
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 24px 24px 0;
+  margin: 0 auto;
+}
+
+.page_item{
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.page_item:hover .page_item_link{
+  height: 100%;
+  font-size: 32px;
+  color: rgba(255,255,255,.9);
+}
+
+.page_item_bg{
+  width: 100%;
+  height: auto;
+}
+
+.page_item_link{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  letter-spacing: 1em;
+  font-weight: 500;
+  color: rgba(255,255,255,.8);
+  transition: height 0.25s;
+}
+
 .timeAixs_box{
   width: 100%;
   background-color: var(--bg-w-245);
@@ -106,7 +162,7 @@
   padding: 70px 0;
 }
 
-.timeAixs_title{
+.timeAixs_title,.page_title{
   width: 80%;
   margin: 30px auto;
   white-space: nowrap;
@@ -117,7 +173,7 @@
   position: relative;
 }
 
-.timeAixs_title::after{
+.timeAixs_title::after,.page_title::after{
   position: absolute;
   content: '';
   z-index: 11;
@@ -129,7 +185,7 @@
   background-color: var(--purple-primary);
 }
 
-.timeAixs_desc{
+.timeAixs_desc,.page_desc{
   margin: 0 auto;
   height: 50px;
   font-size: 12px;
@@ -223,6 +279,10 @@
 
   .timeAixs{
     width: 90%;
+  }
+
+  .page_list{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

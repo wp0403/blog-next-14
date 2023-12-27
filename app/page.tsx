@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { bindHandleScroll, removeScroll } from "@utils/elementUtils";
@@ -15,10 +16,10 @@ export default function Home() {
   const aboutDom = useRef<any>(null);
 
   const goAbout = () => {
-    // const aboutTop = aboutDom.current.offsetTop;
-    // scrollTo(aboutTop, {
-    //   getContainer: () => document.body || window,
-    // });
+    const aboutTop = aboutDom.current.offsetTop;
+    scrollTo(aboutTop, {
+      getContainer: () => document.body || window,
+    });
   };
 
   useEffect(() => {
@@ -69,10 +70,30 @@ export default function Home() {
         </div>
       </div>
       {/* <div className={styles.project_box} ref={aboutDom}>
-          <div className={styles.project_title}>BLOG GROWTH RECORD</div>
-          <div className={styles.project_desc}>更多的作品</div>
-          <div className={styles.project}></div>
-        </div> */}
+        <div className={styles.project_title}>BLOG GROWTH RECORD</div>
+        <div className={styles.project_desc}>更多的作品</div>
+        <div className={styles.project}></div>
+      </div> */}
+      <div className={styles.page_box} ref={aboutDom}>
+        <div className={styles.page_title}>BLOG GROWTH ABILITY</div>
+        <div className={styles.page_desc}>博客项目更多功能入口</div>
+        <div className={styles.page_list}>
+          <div className={styles.page_item}>
+            <Image
+              className={styles.page_item_bg}
+              width={2000}
+              height={2000}
+              src={
+                "https://api-render.wp-boke.work/picture/daily-bing?is_redirect=true"
+              }
+              alt="必应每日壁纸"
+            />
+            <Link className={styles.page_item_link} href="/wallpaper">
+              壁纸
+            </Link>
+          </div>
+        </div>
+      </div>
       <div className={styles.timeAixs_box}>
         <div className={styles.timeAixs_title}>GROWTH RECORD</div>
         <div className={styles.timeAixs_desc}>「 左右滑动查看 」</div>

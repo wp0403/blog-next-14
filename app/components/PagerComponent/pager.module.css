@@ -1,0 +1,38 @@
+.gaper{
+    display: flex;
+    align-items: center;
+}
+
+.prev_btn,.next_btn{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 8px;
+    border-radius: 8px;
+    transition: 0.25s;
+    cursor: pointer;
+    color: var(--b-alpha);
+}
+
+.prev_btn:hover,.next_btn:hover{
+    background-color: var(--purple-text-hover);
+}
+
+
+.prev_btn:hover .icon,.next_btn:hover .icon{
+    color: var(--w-alpha);
+}
+
+.show{
+    display: flex;
+    align-items: center;
+}
+
+.text{
+    font-size: 14px;
+    color: var(--b-alpha-80);
+    padding: 0 4px;
+}
