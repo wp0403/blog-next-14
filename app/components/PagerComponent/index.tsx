@@ -27,6 +27,13 @@ const PagerComponent = (props: Props) => {
   return (
     <div className={styles.gaper}>
       <div
+        className={`${styles.first_page} ${
+          current === 1 ? styles.btn_disabled : ""
+        }`}
+      >
+        首页
+      </div>
+      <div
         className={`${styles.prev_btn} ${
           current === 1 ? styles.btn_disabled : ""
         }`}
@@ -45,6 +52,13 @@ const PagerComponent = (props: Props) => {
         onClick={() => clickPage("next")}
       >
         <SysIcon className={styles.icon} type="icon-jiantou_liebiaoxiangyou" />
+      </div>
+      <div
+        className={`${styles.last_page} ${
+          current >= totalPage ? styles.btn_disabled : ""
+        }`}
+      >
+        尾页
       </div>
     </div>
   );

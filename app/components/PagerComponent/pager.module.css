@@ -36,3 +36,26 @@
     color: var(--b-alpha-80);
     padding: 0 4px;
 }
+
+.first_page,.last_page{
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--b-alpha-80);
+    padding: 0 8px;
+    border-radius: 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+}
+
+.first_page:hover,.last_page:hover{
+    background-color: var(--purple-text-hover);
+    color: var(--w-alpha);
+}
+
+.btn_disabled{
+    cursor:not-allowed;
+    color: var(--b-alpha-40);
+}

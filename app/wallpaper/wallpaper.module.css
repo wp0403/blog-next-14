@@ -54,10 +54,26 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+.picture_box_loading {
+  width: calc(70% - 48px);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: var(--b-alpha-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border-radius: 14px;
+}
+
 .picture_item {
   width: 100%;
   height: auto;
   border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pager_box {
@@ -88,8 +104,12 @@
 
 @media screen and (max-width: 1000px) {
   .type_box,
-  .picture_box {
+  .picture_box{
     width: 100%;
+  }
+
+  .picture_box_loading{
+    width: calc(100% - 48px);
   }
   .type_item {
     font-size: 12px;

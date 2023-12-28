@@ -8,7 +8,8 @@ import { bindHandleScroll, removeScroll } from "@utils/elementUtils";
 import { scrollTo } from "@utils/element";
 import SysIcon from "@components/SysIcon";
 import bgImg from "@public/images/bg00003.jpg";
-import { timeAixsList } from "@/utils/dict";
+import { timeAixsList } from "@utils/dict";
+import { loadingImag } from "@utils/dataImage";
 import styles from "@styles/home.module.css";
 
 export default function Home() {
@@ -75,21 +76,39 @@ export default function Home() {
         <div className={styles.project}></div>
       </div> */}
       <div className={styles.page_box} ref={aboutDom}>
-        <div className={styles.page_title}>BLOG GROWTH ABILITY</div>
+        <div className={styles.page_title}>GROWTH ABILITY</div>
         <div className={styles.page_desc}>博客项目更多功能入口</div>
         <div className={styles.page_list}>
           <div className={styles.page_item}>
             <Image
               className={styles.page_item_bg}
               width={2000}
-              height={2000}
+              height={1320}
               src={
                 "https://api-render.wp-boke.work/picture/daily-bing?is_redirect=true"
               }
               alt="必应每日壁纸"
+              placeholder="blur"
+              blurDataURL={loadingImag}
             />
             <Link className={styles.page_item_link} href="/wallpaper">
-              壁纸
+              壁 纸
+            </Link>
+          </div>
+          <div className={styles.page_item}>
+            <Image
+              className={styles.page_item_bg}
+              width={2000}
+              height={1320}
+              src={
+                "https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg"
+              }
+              alt="热点"
+              placeholder="blur"
+              blurDataURL={loadingImag}
+            />
+            <Link className={styles.page_item_link} href="/news">
+              热 点
             </Link>
           </div>
         </div>

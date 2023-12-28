@@ -147,8 +147,8 @@
   height: 20%;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: 18px;
-  letter-spacing: 1em;
   font-weight: 500;
   color: rgba(255,255,255,.8);
   transition: height 0.25s;
