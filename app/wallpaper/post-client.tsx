@@ -21,18 +21,17 @@ const PostClient = (props) => {
   const [total, setTotal] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const getData = async () => {
-    setLoading(true);
-    const { data } = await getDataApi({
-      type: "apiRender_picture_list360",
-      params: { page_size: 30, type_id: currentType, page },
-    });
-    setPictureList(data.data);
-    setTotal(data.meta.total);
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const getData = async () => {
+      setLoading(true);
+      const { data } = await getDataApi({
+        type: "apiRender_picture_list360",
+        params: { page_size: 30, type_id: currentType, page },
+      });
+      setPictureList(data.data);
+      setTotal(data.meta.total);
+      setLoading(false);
+    };
     getData();
   }, [currentType, page]);
 

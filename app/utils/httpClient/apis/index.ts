@@ -1,13 +1,15 @@
 import blogApi from "./blog";
 import secretApi from "./secret";
 import userApi from "./user";
-import photography from "./photography";
-import wallpaper from "./wallpaper";
+import photographyApi from "./photography";
+import wallpaperApi from "./wallpaper";
+import newsApi from "./news";
 
 export default {
   ...blogApi,
   ...secretApi,
   ...userApi,
-  ...photography,
-  ...wallpaper,
+  ...photographyApi,
+  ...wallpaperApi,
+  ...newsApi,
 };
