@@ -1,4 +1,4 @@
-export default {
+const blogApi = {
   // 文章列表
   all_blog_List: "/getClassifyList",
   // 文章页码列表
@@ -14,3 +14,5 @@ export default {
   // 获取文归档列表
   all_blog_archive_list: "/getArchive",
 };
+
+export default blogApi;
