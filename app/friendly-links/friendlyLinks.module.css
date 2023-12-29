@@ -45,9 +45,9 @@
   border-radius: 8px;
   display: grid;
   grid-gap: 8px;
-  grid-template-columns: repeat(3, calc(33.3% - 5px));
-  grid-template-rows: repeat(1, auto);
   padding-bottom: 16px;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .blog_item {
@@ -99,7 +99,7 @@
   .content,
   .comment {
     width: 80%;
-    max-width: 1200px;
+    max-width: 800px;
   }
 }
 
@@ -109,12 +109,7 @@
   .content,
   .comment {
     width: 75%;
-    max-width: 1200px;
-  }
-
-  .content {
-    grid-template-columns: repeat(3, calc(33.3% - 5px));
-    grid-template-rows: repeat(1, auto);
+    max-width: 800px;
   }
 }
 
@@ -125,11 +120,6 @@
   .comment {
     width: 80%;
   }
-
-  .content{
-    grid-template-columns: repeat(2, calc(50% - 4px));
-    grid-template-rows: repeat(1, auto);
-  }
 }
 
 @media screen and (max-width: 900px) {
@@ -139,11 +129,6 @@
   .comment {
     width: 90%;
   }
-
-  .content{
-    grid-template-columns: repeat(2, calc(50% - 4px));
-    grid-template-rows: repeat(1, auto);
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -151,10 +136,5 @@
   .desc,
   .content {
     width: 90%;
-  }
-
-  .content {
-    grid-template-columns: repeat(1, 100%);
-    grid-template-rows: repeat(1, auto);
   }
 }
