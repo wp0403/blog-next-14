@@ -50,7 +50,8 @@ export default function Home() {
       <div className={styles.bg_card}>
         <Image
           className={styles.bg_card_img}
-          width={1200}
+          width={2000}
+          height={1000}
           src={bgImg}
           alt="blog-bg"
           priority={true}
@@ -90,6 +91,7 @@ export default function Home() {
               alt="必应每日壁纸"
               placeholder="blur"
               blurDataURL={loadingImag}
+              priority={true}
             />
             <Link className={styles.page_item_link} href="/wallpaper">
               壁 纸
@@ -106,6 +108,7 @@ export default function Home() {
               alt="热点"
               placeholder="blur"
               blurDataURL={loadingImag}
+              priority={true}
             />
             <Link className={styles.page_item_link} href="/news">
               热 点
