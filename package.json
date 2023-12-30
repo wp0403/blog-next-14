@@ -35,7 +35,7 @@
     "rss": "^1.2.2",
     "sharp": "^0.33.1",
     "sitemap": "^7.1.1",
-    "twikoo": "^1.6.27",
+    "twikoo": "latest",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
