@@ -13,6 +13,7 @@ import {
   routeChangeComplete,
 } from "@utils/elementUtils";
 import LazyCom from "@components/LazyCom";
+import PagerComponent from "@components/PagerComponent";
 import style from "./Photography.module.css";
 
 const Photography = () => {
@@ -23,13 +24,14 @@ const Photography = () => {
   // 当前页
   const [page, setPage, getPage] = useGetState<number>(1);
   // 每页条数
-  const [page_size, setPageSize] = useState<number>(10);
+  const [page_size, setPageSize] = useState<number>(8);
   const [loading, setLoading] = useGetState<boolean>(true);
   const [total, setTotal] = useState<number>(0);
 
   const content = useRef<any>(null);
 
   const getData = async () => {
+    setLoading(true);
     const posts = await getDataApi({
       type: "all_photography_List",
       params: { page: getPage(), page_size: page_size },
@@ -112,17 +114,13 @@ const Photography = () => {
           )}
         </Spin>
       </div>
-      {Boolean(total > 10) && (
+      {Boolean(total) && (
         <div className={style.pagination}>
-          <Pagination
-            hideOnSinglePage
-            showLessItems
-            showSizeChanger={false}
-            current={page}
-            pageSize={page_size}
+          <PagerComponent
             total={total}
+            current={page}
+            pageSize={8}
             onChange={(v) => {
-              setLoading(true);
               setPage(v);
               routeChangeComplete();
             }}

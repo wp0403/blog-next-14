@@ -6,6 +6,7 @@ import {
   bindHandleScroll,
   removeNavItemStyle,
   removeScroll,
+  routeChangeComplete,
 } from "@utils/elementUtils";
 import getDataApi from "@utils/httpClient/request";
 import PagerComponent from "@components/PagerComponent";
@@ -90,7 +91,10 @@ const PostClient = (props) => {
             total={total}
             current={page}
             pageSize={30}
-            onChange={setPage}
+            onChange={(v) => {
+              setPage(v);
+              routeChangeComplete();
+            }}
           />
         </div>
       )}

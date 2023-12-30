@@ -34,7 +34,7 @@
 .text{
     font-size: 14px;
     color: var(--b-alpha-80);
-    padding: 0 4px;
+    padding: 0 2px;
 }
 
 .first_page,.last_page{

@@ -30,6 +30,7 @@ const PagerComponent = (props: Props) => {
         className={`${styles.first_page} ${
           current === 1 ? styles.btn_disabled : ""
         }`}
+        onClick={() => onChange(1)}
       >
         首页
       </div>
@@ -42,7 +43,8 @@ const PagerComponent = (props: Props) => {
         <SysIcon className={styles.icon} type="icon-jiantou_liebiaoxiangzuo" />
       </div>
       <div className={styles.show}>
-        <span className={styles.text}>{current}</span>/
+        <span className={styles.text}>{current}</span>
+        <span className={styles.text}>/</span>
         <span className={styles.text}>{totalPage}</span>
       </div>
       <div
@@ -57,6 +59,7 @@ const PagerComponent = (props: Props) => {
         className={`${styles.last_page} ${
           current >= totalPage ? styles.btn_disabled : ""
         }`}
+        onClick={() => onChange(totalPage)}
       >
         尾页
       </div>
