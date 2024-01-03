@@ -12,6 +12,7 @@ import { LayoutContext } from "@store/layoutStore";
 import styles from "./navBar.module.css";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const { changeTheme } = useContext(LayoutContext);
   // 主题
   const [theme, setTheme] = useState<any>(1);
@@ -23,7 +24,7 @@ export default function Navbar() {
     return (
       <Link
         className={`${styles.nav_item} nav_item_text ${
-          usePathname() !== "/" && usePathname() === obj?.href
+          pathname !== "/" && pathname === obj?.href
             ? styles.nav_item_active
             : ""
         }`}
