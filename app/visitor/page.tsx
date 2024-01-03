@@ -19,16 +19,12 @@ import style from "./visitor.module.css";
 const Visitor = () => {
   const { theme } = useContext(LayoutContext);
   const [list, setList] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage, getPage] = useGetState<number>(1);
   const [total, setTotal] = useState<number>(0);
-  const [isBrowser, setIsBrowser] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
 
   const getData = async () => {
+    setLoading(true);
     const posts = await getDataApi({
       type: "all_user_visitor_List",
       params: { page: getPage() },
@@ -72,16 +68,12 @@ const Visitor = () => {
             <div
               key={v.id}
               className={style.item}
-              style={
-                isBrowser
-                  ? {
-                      backgroundColor:
-                        theme === 2
-                          ? getRandomColor(36, 220)
-                          : getRandomColor(30, 30),
-                    }
-                  : {}
-              }
+              style={{
+                backgroundColor:
+                  theme === 2
+                    ? getRandomColor(36, 220)
+                    : getRandomColor(30, 30),
+              }}
             >
               <div className={style.item_header}>
                 <div className={style.item_time}>
@@ -106,18 +98,19 @@ const Visitor = () => {
           ))}
         </Spin>
       </div>
-      <div className={style.pagination}>
-        <PagerComponent
-          total={total}
-          pageSize={15}
-          current={page}
-          onChange={(v) => {
-            setLoading(true);
-            setPage(v);
-            routeChangeComplete();
-          }}
-        />
-      </div>
+      {Boolean(total) && (
+        <div className={style.pagination}>
+          <PagerComponent
+            total={total}
+            pageSize={15}
+            current={page}
+            onChange={(v) => {
+              setPage(v);
+              routeChangeComplete();
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };

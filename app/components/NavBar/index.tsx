@@ -23,7 +23,9 @@ export default function Navbar() {
     return (
       <Link
         className={`${styles.nav_item} nav_item_text ${
-          usePathname() === obj?.href ? styles.nav_item_active : ""
+          usePathname() !== "/" && usePathname() === obj?.href
+            ? styles.nav_item_active
+            : ""
         }`}
         key={obj?.key}
         href={obj?.href}
