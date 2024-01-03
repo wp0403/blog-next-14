@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Pagination, Input, Spin } from "antd";
+import { Input, Spin } from "antd";
 import { useDebounceFn, useGetState } from "ahooks";
 import SysIcon from "@components/SysIcon";
+import PagerComponent from "@components/PagerComponent";
 import {
   addNavItemStyle,
   bindHandleScroll,
@@ -136,12 +137,10 @@ export default function BlogDetails({ post }) {
             </Spin>
           </div>
           <div className={style.blog_Pagination}>
-            <Pagination
-              hideOnSinglePage
-              showLessItems
-              showSizeChanger={false}
-              defaultCurrent={page}
+            <PagerComponent
               total={(keyword ? searchTotal : totalPage) * 10}
+              pageSize={10}
+              current={+page}
               onChange={(v) =>
                 keyword
                   ? setSearchPage(v)

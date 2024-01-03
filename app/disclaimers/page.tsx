@@ -49,14 +49,12 @@ const Disclaimers = () => {
         <div className={style.footer}>
           如对本博客免责声明有任何疑问或建议，请联系shimmer的
           <Link
+            className={`${style.link} ${style.link_click}`}
             href="mailto:webwp0403@163.com?subject=邮件标题&body=邮件内容"
             target="_blank"
-            passHref
-            legacyBehavior
+            rel="nofollow"
           >
-            <a className={`${style.link} ${style.link_click}`} rel="nofollow">
-              电子邮箱
-            </a>
+            电子邮箱
           </Link>
           或通过本博客页面上的相关联系方式进行联系。
         </div>

@@ -6,7 +6,7 @@
  * @Author: WangPeng
  * @Date: 2023-05-24 13:14:12
  * @LastEditors: WangPeng
- * @LastEditTime: 2023-05-24 15:40:07
+ * @LastEditTime: 2024-01-03 15:15:20
  */
 
 import Link from "next/link";
@@ -38,14 +38,12 @@ const Permit = (props: Props) => {
         <div className={style.text}>
           作品许可：本作品采用
           <Link
+            className={style.link}
             href="http://creativecommons.org/licenses/by-sa/4.0/"
             target="_blank"
-            passHref
-            legacyBehavior
+            rel="license"
           >
-            <a className={style.link} rel="license">
-              知识共享署名-相同方式共享 4.0 国际许可协议
-            </a>
+            知识共享署名-相同方式共享 4.0 国际许可协议
           </Link>
           进行许可。
         </div>

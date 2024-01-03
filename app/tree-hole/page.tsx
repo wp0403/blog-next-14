@@ -1,5 +1,4 @@
 "use client";
-import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { useGetState } from "ahooks";
 import {
@@ -89,9 +88,6 @@ export default function TreeHole() {
 
   return (
     <div className={style.tree_hole} ref={content}>
-      <Head>
-        <title>树洞</title>
-      </Head>
       <div className={style.content}>
         {changeTreeData(data)?.map((v, ind) => (
           <div className={style.item} key={ind}>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import { useDebounceEffect, useGetState, useMount } from "ahooks";
-import { Pagination, Spin } from "antd";
+import { Spin } from "antd";
 import { LayoutContext } from "@/store/layoutStore";
 import {
   addNavItemStyle,
@@ -13,6 +13,7 @@ import {
 import { formatDate } from "@/utils/dataUtils";
 import { getRandomColor } from "@utils/dataUtils";
 import getDataApi from "@/utils/httpClient/request";
+import PagerComponent from "@components/PagerComponent";
 import style from "./visitor.module.css";
 
 const Visitor = () => {
@@ -106,13 +107,10 @@ const Visitor = () => {
         </Spin>
       </div>
       <div className={style.pagination}>
-        <Pagination
-          hideOnSinglePage
-          showLessItems
-          showSizeChanger={false}
-          current={page}
-          pageSize={15}
+        <PagerComponent
           total={total}
+          pageSize={15}
+          current={page}
           onChange={(v) => {
             setLoading(true);
             setPage(v);
