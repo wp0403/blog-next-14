@@ -54,6 +54,12 @@
   color: var(--txt-w-pure);
 }
 
+/* 当前选中导航的样式 */
+.nav_item_active{
+  background-color: var(--b-alpha-5);
+  border-radius: 5px;
+}
+
 .nav_item:hover {
   background-color: var(--b-alpha-5);
   border-radius: 5px;

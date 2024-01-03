@@ -22,12 +22,6 @@
   color: var(--b-alpha-80);
 }
 
-/* 当前选中导航的样式 */
-/* #nev_item_active{
-  background-color: var(--b-alpha-5);
-  border-radius: 5px;
-} */
-
 /* 打字机光标颜色 */
 /* .typed-cursor{
   color: var(--txt-w-pure);

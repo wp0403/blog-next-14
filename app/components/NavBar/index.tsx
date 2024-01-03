@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useCallback, useContext, useEffect, useState } from "react";
 import SysIcon from "../SysIcon";
 import { navList } from "./routes";
@@ -12,25 +13,26 @@ import styles from "./navBar.module.css";
 
 export default function Navbar() {
   const { changeTheme } = useContext(LayoutContext);
-  const [current, setCurrent] = useState<string>("/");
   // 主题
   const [theme, setTheme] = useState<any>(1);
   // 是否弹出遮罩
   const [avtive, setActive] = useState<boolean>(false);
 
   // 导航item
-  const navItem = (obj) => (
-    <Link
-      className={`${styles.nav_item} nav_item_text`}
-      id={`${current === obj?.href && "nev_item_active"}`}
-      href={obj?.href}
-      key={obj?.key}
-      onClick={() => setCurrent(obj?.href)}
-    >
-      <SysIcon className={styles.nav_item_icon} type={obj?.icon} />
-      <span className={styles.nav_item_title}>{obj?.title}</span>
-    </Link>
-  );
+  const navItem = (obj) => {
+    return (
+      <Link
+        className={`${styles.nav_item} nav_item_text ${
+          usePathname() === obj?.href ? styles.nav_item_active : ""
+        }`}
+        key={obj?.key}
+        href={obj?.href}
+      >
+        <SysIcon className={styles.nav_item_icon} type={obj?.icon} />
+        <span className={styles.nav_item_title}>{obj?.title}</span>
+      </Link>
+    );
+  };
 
   // 切换主题
   const themeSwitch = useCallback(
@@ -48,7 +50,6 @@ export default function Navbar() {
   );
 
   useEffect(() => {
-    setCurrent(window.location.pathname);
     const darkModeMediaQuery = window.matchMedia(
       "(prefers-color-scheme: light)"
     );
