@@ -16,7 +16,7 @@ const Footer = () => {
         <Link
           className={style.link}
           target="_blank"
-          href="/sitemap.xml"
+          href="/sitemap"
           passHref
           legacyBehavior
         >
@@ -27,7 +27,7 @@ const Footer = () => {
         <Link
           className={style.link}
           target="_blank"
-          href="/rss.xml"
+          href="/rss"
           passHref
           legacyBehavior
         >
