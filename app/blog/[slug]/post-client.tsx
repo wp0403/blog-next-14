@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Input, Spin } from "antd";
+import { Input, Spin, Empty } from "antd";
 import { useDebounceFn, useGetState } from "ahooks";
 import SysIcon from "@components/SysIcon";
 import PagerComponent from "@components/PagerComponent";
@@ -133,23 +133,29 @@ export default function BlogDetails({ post }) {
               {newData &&
                 Boolean(newData?.length) &&
                 newData?.map((v) => renderItem(v))}
-              {(!newData || !newData?.length) && "暂无数据"}
+              {(!newData || !newData?.length) && (
+                <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+              )}
             </Spin>
           </div>
-          <div className={style.blog_Pagination}>
-            <PagerComponent
-              total={(keyword ? searchTotal : totalPage) * 10}
-              pageSize={10}
-              current={+page}
-              onChange={(v) =>
-                keyword
-                  ? setSearchPage(v)
-                  : router.push(
-                      isType ? `/blog-classify/${type}/${v}` : `/blog/${v}`
-                    )
-              }
-            />
-          </div>
+          {(keyword ? searchTotal : totalPage) > 0 ? (
+            <div className={style.blog_Pagination}>
+              <PagerComponent
+                total={(keyword ? searchTotal : totalPage) * 10}
+                pageSize={10}
+                current={+page}
+                onChange={(v) =>
+                  keyword
+                    ? setSearchPage(v)
+                    : router.push(
+                        isType ? `/blog-classify/${type}/${v}` : `/blog/${v}`
+                      )
+                }
+              />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <div className={style.blog_right}>
           <div className={style.blog_right_content}>

@@ -1,8 +1,6 @@
 import getData from "@/utils/httpClient/request";
 import PostClient from "../../blog/[slug]/post-client";
 
-export const dynamicParams = false;
-
 // 动态路由
 export async function generateStaticParams() {
   // 调用外部 API 获取内容
