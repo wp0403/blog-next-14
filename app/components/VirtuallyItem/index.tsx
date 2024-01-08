@@ -16,6 +16,7 @@ const VirtuallyItem = (props) => {
   const scrollCallback = () => {
     // get position relative to viewport
     const rect = itemRef.current?.getBoundingClientRect();
+    if (!rect) return;
     const distanceFromTop = rect.top;
     const distanceFromBottom = rect.bottom;
     // 可视区域高度

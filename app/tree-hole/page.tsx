@@ -46,6 +46,8 @@ export default function TreeHole() {
     // 滚动盒子
     const scrollBox = layoutContent();
     const scrollConBox = content.current;
+
+    if (!scrollConBox) return;
     const flag = page < totalPages;
 
     if (
