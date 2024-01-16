@@ -1,6 +1,5 @@
 import getData from "@/utils/httpClient/request";
 import PostClient from "../../blog/[slug]/post-client";
-import styles from "../../blog/blog.module.css";
 
 // 动态路由
 export async function generateStaticParams() {
@@ -56,5 +55,5 @@ async function getPost({ params }) {
 export default async function BlogList({ params }) {
   const post = await getPost(params);
 
-  return <PostClient post={post} styles={styles} />;
+  return <PostClient post={post} />;
 }

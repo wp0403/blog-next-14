@@ -1,6 +1,5 @@
 import getData from "@/utils/httpClient/request";
 import PostClient from "./post-client";
-import styles from "../blog.module.css";
 
 export const dynamicParams = false;
 
@@ -52,5 +51,5 @@ async function getPost(params: { slug: any }) {
 export default async function BlogList({ params }) {
   const post = await getPost(params);
 
-  return <PostClient post={post} styles={styles} />;
+  return <PostClient post={post} />;
 }

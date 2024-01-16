@@ -3,7 +3,6 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import getData from "@/utils/httpClient/request";
 import PostClient from "./post-client";
-import styles from "../blogDetail.module.css";
 
 export const dynamicParams = false;
 
@@ -32,9 +31,5 @@ export default async function BlogDetails({ params }) {
       rehypePlugins: [],
     },
   });
-  return source ? (
-    <PostClient data={data} source={source} styles={styles} />
-  ) : (
-    ""
-  );
+  return source ? <PostClient data={data} source={source} /> : "";
 }
