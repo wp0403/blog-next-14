@@ -15,9 +15,8 @@ import {
 import { useRouter } from "next/navigation";
 import { formatDate, hasUnicode, unicodeToEmoji } from "@utils/dataUtils";
 import getDataApi from "@/utils/httpClient/request";
-import style from "../blog.module.css";
 
-export default function BlogDetails({ post }) {
+export default function BlogDetails({ post, styles }) {
   const router = useRouter();
   const {
     data,
@@ -72,38 +71,41 @@ export default function BlogDetails({ post }) {
   // 渲染单项的样式
   const renderItem = (item) => {
     return (
-      <div className={style.blog_item} key={item.id}>
-        <div className={style.blog_item_content}>
+      <div className={styles.blog_item} key={item.id}>
+        <div className={styles.blog_item_content}>
           <Link
-            className={style.blog_item_title}
+            className={styles.blog_item_title}
             href={`/blog-details/${item.id}`}
           >
             {item.title}
           </Link>
-          <div className={style.blog_item_desc}>{item.desc}</div>
-          <div className={style.blog_item_footer}>
-            <div className={style.blog_item_class}>
+          <div className={styles.blog_item_desc}>{item.desc}</div>
+          <div className={styles.blog_item_footer}>
+            <div className={styles.blog_item_class}>
               <span>{item.classify}</span>
-              <span className={style.blog_item_class_border}>|</span>
+              <span className={styles.blog_item_class_border}>|</span>
               <span>{item.classify_sub}</span>
             </div>
-            <div className={style.blog_item_time}>
+            <div className={styles.blog_item_time}>
               {formatDate(item.time_str, "yyyy-MM-dd")}
             </div>
-            <div className={style.blog_item_data}>
-              <div className={style.blog_item_browse}>
+            <div className={styles.blog_item_data}>
+              <div className={styles.blog_item_browse}>
                 <SysIcon
-                  className={style.blog_item_icon}
+                  className={styles.blog_item_icon}
                   type="icon-yanjing-kai"
                 />
                 {item.views}
               </div>
-              <div className={style.blog_item_follow}>
-                <SysIcon className={style.blog_item_icon} type="icon-guanzhu" />
+              <div className={styles.blog_item_follow}>
+                <SysIcon
+                  className={styles.blog_item_icon}
+                  type="icon-guanzhu"
+                />
                 {item.likes}
               </div>
             </div>
-            <div className={style.blog_item_user}>
+            <div className={styles.blog_item_user}>
               {hasUnicode(item?.userInfo?.name)
                 ? unicodeToEmoji(item?.userInfo?.name)
                 : item?.userInfo?.name}
@@ -124,11 +126,11 @@ export default function BlogDetails({ post }) {
   const newData = keyword ? searchList : data;
 
   return (
-    <div className={style.blog}>
-      <div className={style.blog_con}>
-        {/* <div className={style.blog_left}></div> */}
-        <div className={style.blog_list}>
-          <div className={style.blog_content}>
+    <div className={styles.blog}>
+      <div className={styles.blog_con}>
+        {/* <div className={styles.blog_left}></div> */}
+        <div className={styles.blog_list}>
+          <div className={styles.blog_content}>
             <Spin spinning={loading}>
               {newData &&
                 Boolean(newData?.length) &&
@@ -139,7 +141,7 @@ export default function BlogDetails({ post }) {
             </Spin>
           </div>
           {(keyword ? searchTotal : totalPage) > 0 ? (
-            <div className={style.blog_Pagination}>
+            <div className={styles.blog_Pagination}>
               <PagerComponent
                 total={(keyword ? searchTotal : totalPage) * 10}
                 pageSize={10}
@@ -157,33 +159,33 @@ export default function BlogDetails({ post }) {
             ""
           )}
         </div>
-        <div className={style.blog_right}>
-          <div className={style.blog_right_content}>
-            <div className={style.blog_search}>
+        <div className={styles.blog_right}>
+          <div className={styles.blog_right_content}>
+            <div className={styles.blog_search}>
               <Input
-                className={style.blog_search_input}
+                className={styles.blog_search_input}
                 placeholder="搜索博文"
                 value={keyword}
                 onChange={changeKeyword}
               />
             </div>
-            <div className={style.blog_class}>
-              <div className={style.blog_class_title}>文章分类</div>
-              <div className={style.blog_class_content}>
+            <div className={styles.blog_class}>
+              <div className={styles.blog_class_title}>文章分类</div>
+              <div className={styles.blog_class_content}>
                 {classifyNum?.map((v) => (
                   <div
-                    className={`${style.blog_class_item} ${
-                      v.type == type && style.blog_class_item_active
+                    className={`${styles.blog_class_item} ${
+                      v.type == type && styles.blog_class_item_active
                     }`}
                     key={v?.type}
                   >
                     <div
-                      className={style.blog_class_item_name}
+                      className={styles.blog_class_item_name}
                       onClick={() => router.push(`/blog-classify/${v?.type}/1`)}
                     >
                       {v?.label}
                     </div>
-                    <div className={style.blog_class_item_num}>{v?.count}</div>
+                    <div className={styles.blog_class_item_num}>{v?.count}</div>
                   </div>
                 ))}
               </div>
