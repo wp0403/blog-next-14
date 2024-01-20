@@ -74,10 +74,17 @@ export default function Navbar() {
         <div className={styles.nav_left}>
           <Link className={`${styles.title} nav_item_text`} href="/">
             <Image
-              className={styles.logo}
+              className={`${styles.logo} logo-auto`}
               width={100}
               alt="about"
               src={theme === 2 ? logo_black : logo_white}
+              priority={true}
+            />
+            <Image
+              className={`${styles.logo} logo-light`}
+              width={100}
+              alt="about"
+              src={logo_white}
               priority={true}
             />
           </Link>

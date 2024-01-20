@@ -2,6 +2,15 @@
 @import url(./reset.css);
 @import url(./id.css);
 @import url(./markdown.css);
+@font-face {
+  font-family: "阿里妈妈东方大楷 Regular";
+  font-weight: 400;
+  src: url("./font/VjlkfcVsDrtK.woff2")
+      format("woff2"),
+    url("./font/VjlkfcVsDrtK.woff")
+      format("woff");
+  font-display: swap;
+}
 
 body,
 h1,
@@ -145,6 +154,7 @@ body {
   flex-direction: column;
 }
 
+/* nav start */
 .nav_active {
   background-color: var(--w-alpha-40);
   backdrop-filter: blur(8px);
@@ -152,11 +162,28 @@ body {
   transition: 0.4s;
 }
 
+.logo-light{
+  display: block;
+}
+
+.logo-auto{
+  display: none;
+}
+
+.nav_active .logo-auto,.nav_active_border .logo-auto{
+  display: block;
+}
+
+.nav_active .logo-light,.nav_active_border .logo-light{
+  display: none;
+}
+
 #layout_nav.nav_none {
   opacity: 0;
   transition: 0.4s;
   pointer-events: none;
 }
+/* nav end */
 
 @media screen and (max-width: 900px) {
   * {
