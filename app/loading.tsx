@@ -1,4 +1,3 @@
-"use client";
 import style from "@styles/loadingcom.module.css";
 
 const LoadingCom = () => {
