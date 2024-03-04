@@ -32,6 +32,8 @@
   text-align: start;
   padding: 3px 30px;
   color: var(--b-alpha);
+  display: flex;
+  align-items: center;
 }
 
 .legalText {
@@ -74,6 +76,12 @@
 
 .link_click:hover {
   color: var(--color-blue-hover);
+}
+
+.github_link{
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
 }
 
 @media screen and (max-width: 700px) {

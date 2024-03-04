@@ -100,7 +100,25 @@ const Footer = () => {
         </Link>
       </div>
       <div className={style.copyright}>
-        <div className={style.user}>© {new Date().getFullYear()} Shimmer🌈</div>
+        <div className={style.user}>
+          © {new Date().getFullYear()} Shimmer🌈 |
+          <Link
+            className={style.github_link}
+            href={"https://github.com/wp0403/blog-next-14"}
+            target="_blank"
+          >
+            <Image
+              width={12}
+              height={12}
+              alt="github"
+              src={
+                theme === 1
+                  ? "https://github.githubassets.com/favicons/favicon-dark.svg"
+                  : "https://github.githubassets.com/favicons/favicon.svg"
+              }
+            />
+          </Link>
+        </div>
         <div className={style.legalText}>
           <Link
             className={`${style.link} ${style.link_click}`}
