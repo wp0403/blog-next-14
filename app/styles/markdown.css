@@ -259,14 +259,18 @@ code.hljs {
 .toc-item {
   color: var(--b-alpha-90);
   font-weight: 500;
-  margin: 8px 0;
   font-size: 14px;
-  line-height: 1.5em;
   cursor: pointer;
+  margin: 8px 0;
   transition: 0.4s;
-  text-overflow: ellipsis;
+}
+
+.toc-item span{
   overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  display: inline-block;
+  width: 100%;
 }
 
 .toc-item:hover {

@@ -80,6 +80,8 @@
   display: flex;
   flex-direction: column;
   padding: 1em 0;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
 }
 
 .blog_detail_box .content {

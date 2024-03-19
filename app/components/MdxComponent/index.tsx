@@ -194,7 +194,7 @@ export default function useMdx(props: MDXRemoteProps) {
                 });
               }}
             >
-              {v.title}
+              <span>{v.title}</span>
             </div>
           );
         })}
