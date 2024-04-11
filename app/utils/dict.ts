@@ -245,12 +245,12 @@ export const projectList = [
     projectName: "Dashboard",
     projectTime: "2023.1 - 至今",
     desc: "该项目是为公司领导提供数据可视化展示的一个网页，主要用于查看公司各项运营指标和财务指标等信息。",
-    lectotype: "React + Antd + Antd Mobile + Echarts",
+    lectotype: "Vue3 + Antd Vue + Echarts",
     jobOrContribute: [
       {
         id: 1,
         value:
-          "担任该项目的主要开发人员，负责整个项目的架构和开发环境的搭建，使用 React、antd、antd mobile 和 echarts 等技术实现数据可视化效果，确保整个项目的高效运行；",
+          "担任该项目的主要开发人员，负责整个项目的架构和开发环境的搭建，使用 Vue3、Antd Vue 和 echarts 等技术实现数据可视化效果，确保整个项目的高效运行；",
       },
       {
         id: 2,
@@ -260,7 +260,7 @@ export const projectList = [
       {
         id: 3,
         value:
-          "基于React 针对不同设备的展示需求，适配了 PC、iPad 和大屏设备的展示，使用 antd 和 antd mobile 等 UI 库确保了页面的美观和易用性；",
+          "基于React 针对不同设备的展示需求，适配了 PC、iPad 和大屏设备的展示，使用 Antd Vue 等 UI 库确保了页面的美观和易用性；",
       },
       {
         id: 4,
@@ -574,8 +574,15 @@ export const schoolUndergo = [
     id: 1,
     schoolName: "东北师范大学",
     specialityName: "计算机科学与技术",
-    education: "本科",
-    time: "",
+    education: "本科（非全日制）",
+    time: "2021.8-2024.6",
+  },
+  {
+    id: 2,
+    schoolName: "渤海理工职业学院",
+    specialityName: "机电一体化",
+    education: "专科（全日制）",
+    time: "2017.9-2020.6",
   },
 ];
 
