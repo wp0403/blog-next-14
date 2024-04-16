@@ -20,16 +20,19 @@ const getData = async ({
   params?: { [key: string]: any } | null | undefined;
   config?: RequestInit | undefined;
 }) => {
-  const BASE_URL = baseObj[type.split("_")[0]];
-  // 最终请求
-  const res = await fetch(
-    `${BASE_URL}${apis[type]}${
-      params ? `?${objectToQueryString(params)}` : ""
-    }`,
-    config
-  );
-  const data = await res.json();
-  return data;
+  try {
+    const BASE_URL = baseObj[type.split("_")[0]];
+    const queryString = params ? `?${objectToQueryString(params)}` : "";
+    const url = `${BASE_URL}${apis[type]}${queryString}`;
+    const response = await fetch(url, config);
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // re-throw the error to propagate it to the caller
+  }
 };
 
 export default getData;

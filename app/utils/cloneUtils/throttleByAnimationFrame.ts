@@ -1,5 +1,11 @@
 import raf from 'rc-util/lib/raf';
 
+/**
+ * 使用动画帧进行节流处理
+ *
+ * @param fn 需要进行节流处理的函数
+ * @returns 返回节流处理后的函数
+ */
 export function throttleByAnimationFrame(fn: (...args: any[]) => void) {
     let requestId: number | null;
 
@@ -19,6 +25,11 @@ export function throttleByAnimationFrame(fn: (...args: any[]) => void) {
     return throttled;
 }
 
+/**
+ * 使用 requestAnimationFrame 节流函数的装饰器
+ *
+ * @returns 返回一个节流函数
+ */
 export function throttleByAnimationFrameDecorator() {
     return function throttle(target: any, key: string, descriptor: any) {
         const fn = descriptor.value;
