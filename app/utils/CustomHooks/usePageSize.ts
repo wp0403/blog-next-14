@@ -8,11 +8,17 @@ const usePageSize = (props: { id: string }) => {
     setPageWidth(document.getElementById(id)?.offsetWidth || 0);
     setLoading(false);
   };
+
+  const pageLoad = () => {
+    setLoading(false);
+  };
+
   useEffect(() => {
     window.addEventListener("resize", pageSize);
-    pageSize();
+    window.addEventListener("load", pageLoad);
     return () => {
       window.removeEventListener("resize", pageSize);
+      window.removeEventListener("load", pageLoad);
     };
   }, []);
 
