@@ -45,8 +45,8 @@ const LazyCom = (props: Props) => {
         <>
           <Image
             className={`${className} ${style.photography_image}`}
-            width={width as any}
-            height={width as any}
+            width={300}
+            height={300}
             alt=""
             onLoad={() => {
               !isLoad && setIsLoad(true);
@@ -58,8 +58,6 @@ const LazyCom = (props: Props) => {
           {isLoad && (
             <AntImage
               className={`${className} ${style.photography_image_antd}`}
-              width={width as any}
-              height={width as any}
               onLoad={() => {
                 setIsAntdLoad(true);
               }}
