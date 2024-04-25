@@ -1,8 +1,7 @@
 "use client";
-import { useGetState, useDebounceEffect, useMount } from "ahooks";
-import { Image, Pagination, Spin } from "antd";
+import { useGetState, useDebounceEffect, useMount, useSize } from "ahooks";
+import { Image, Spin } from "antd";
 import React, { useEffect, useRef, useState } from "react";
-import usePageSize from "@utils/CustomHooks/usePageSize";
 import getDataApi from "@/utils/httpClient/request";
 import { formatDate } from "@utils/dataUtils";
 import {
@@ -17,7 +16,7 @@ import PagerComponent from "@components/PagerComponent";
 
 const Photography = ({ style }) => {
   const dom = useRef<any>(null);
-
+  const content = useRef<any>(null);
   // 列表
   const [data, setData] = useState<any[]>([]);
   // 当前页
@@ -26,8 +25,6 @@ const Photography = ({ style }) => {
   const [page_size, setPageSize] = useState<number>(8);
   const [loading, setLoading] = useGetState<boolean>(true);
   const [total, setTotal] = useState<number>(0);
-
-  const content = useRef<any>(null);
 
   const getData = async () => {
     setLoading(true);
@@ -65,9 +62,7 @@ const Photography = ({ style }) => {
     };
   }, []);
 
-  const { pageWidth, pageSizeLoading } = usePageSize({
-    id: "photography_content",
-  });
+  const size = useSize(dom.current);
 
   const randerItem = (v) => (
     <div className={style.photography_item} key={v.id}>
@@ -91,7 +86,7 @@ const Photography = ({ style }) => {
               key={v1.id}
               domKey={v1.id}
               imgSrc={v1.url}
-              width={pageWidth / 3}
+              width={((size?.width || 0) - 3) / 3}
             />
           ))}
         </Image.PreviewGroup>
@@ -101,16 +96,9 @@ const Photography = ({ style }) => {
 
   return (
     <div className={style.photography} ref={content}>
-      <div
-        className={style.photography_content}
-        id="photography_content"
-        ref={dom}
-      >
+      <div className={style.photography_content} ref={dom}>
         <Spin spinning={loading}>
-          {!pageSizeLoading &&
-            data &&
-            Boolean(data?.length) &&
-            data?.map((v) => randerItem(v))}
+          {data && Boolean(data?.length) && data?.map((v) => randerItem(v))}
           {(!data || !data?.length) && (
             <div className={style.loading_box}>暂无数据</div>
           )}

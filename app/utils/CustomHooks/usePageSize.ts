@@ -9,16 +9,12 @@ const usePageSize = (props: { id: string }) => {
     setLoading(false);
   };
 
-  const pageLoad = () => {
-    setLoading(false);
-  };
-
   useEffect(() => {
     window.addEventListener("resize", pageSize);
-    window.addEventListener("load", pageLoad);
+    pageSize();
+
     return () => {
       window.removeEventListener("resize", pageSize);
-      window.removeEventListener("load", pageLoad);
     };
   }, []);
 
