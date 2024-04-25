@@ -65,7 +65,7 @@ const Photography = ({ style }) => {
     };
   }, []);
 
-  const { pageWidth } = usePageSize({
+  const { pageWidth, pageSizeLoading } = usePageSize({
     id: "photography_content",
   });
 
@@ -107,7 +107,10 @@ const Photography = ({ style }) => {
         ref={dom}
       >
         <Spin spinning={loading}>
-          {data && Boolean(data?.length) && data?.map((v) => randerItem(v))}
+          {!pageSizeLoading &&
+            data &&
+            Boolean(data?.length) &&
+            data?.map((v) => randerItem(v))}
           {(!data || !data?.length) && (
             <div className={style.loading_box}>暂无数据</div>
           )}
