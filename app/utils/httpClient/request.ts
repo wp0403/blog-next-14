@@ -15,7 +15,8 @@ const getData = async ({
   type,
   params = null,
   config = { next: { revalidate: 3600 } },
-}: {
+}: // config = { cache: "force-cache" },
+{
   type: ApiKey;
   params?: { [key: string]: any } | null | undefined;
   config?: RequestInit | undefined;

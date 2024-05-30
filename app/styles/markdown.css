@@ -300,3 +300,21 @@ code.hljs {
 .toc-item5 {
   padding-left: 64px;
 }
+
+/* markdown table */
+.markdown_body table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown_body th, .markdown_body td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.markdown_body th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+

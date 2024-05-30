@@ -2,6 +2,7 @@
 @import url(./reset.css);
 @import url(./id.css);
 @import url(./markdown.css);
+@import url(./loading.css);
 @font-face {
   font-family: "阿里妈妈东方大楷 Regular";
   font-weight: 400;

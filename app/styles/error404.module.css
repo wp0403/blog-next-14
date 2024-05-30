@@ -1,11 +1,12 @@
 .error_404 {
   width: 100%;
-  height: 100vh;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--bg-w-pure);
+  padding: 150px 0;
 }
 
 .content {

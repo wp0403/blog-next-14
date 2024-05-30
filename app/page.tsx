@@ -7,11 +7,9 @@ import Typed from "typed.js";
 import { bindHandleScroll, removeScroll } from "@utils/elementUtils";
 import { scrollTo } from "@utils/element";
 import SysIcon from "@components/SysIcon";
-// import bgImgNight from "@public/images/bg00003.jpeg";
 import bgImgLight from "@public/images/bg00005.jpeg";
 import { timeAixsList } from "@utils/dict";
 import { loadingImag } from "@utils/dataImage";
-// import { LayoutContext } from "@store/layoutStore";
 import styles from "@styles/home.module.css";
 
 export default function Home() {
