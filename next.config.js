@@ -3,6 +3,19 @@
 const withMDX = require("@next/mdx")();
 
 const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/:path*{/}?",
+        headers: [
+          {
+            key: "x-accel-buffering",
+            value: "no",
+          },
+        ],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
