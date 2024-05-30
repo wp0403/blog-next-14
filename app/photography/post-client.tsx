@@ -89,18 +89,20 @@ const Photography = (props) => {
         </div>
         {v.desc && <div className={style.desc}>{v.desc}</div>}
       </div>
-      <div className={style.content}>
-        <Image.PreviewGroup>
-          {v?.imgs?.map((v1) => (
-            <LazyCom
-              key={v1.id}
-              domKey={v1.id}
-              imgSrc={v1.url}
-              width={((size?.width || 0) - 3) / 3}
-            />
-          ))}
-        </Image.PreviewGroup>
-      </div>
+      {!props.loading && (
+        <div className={style.content}>
+          <Image.PreviewGroup>
+            {v?.imgs?.map((v1) => (
+              <LazyCom
+                key={v1.id}
+                domKey={v1.id}
+                imgSrc={v1.url}
+                width={((size?.width || 0) - 3) / 3}
+              />
+            ))}
+          </Image.PreviewGroup>
+        </div>
+      )}
     </div>
   );
 

@@ -51,7 +51,7 @@ const LazyCom = (props: Props) => {
             onLoad={() => {
               !isLoad && setIsLoad(true);
             }}
-            src={src}
+            src={imgSrc}
             quality={100}
             {...reset}
           />
@@ -65,7 +65,7 @@ const LazyCom = (props: Props) => {
               }}
               preview={isAntdLoad}
               alt=""
-              src={src}
+              src={imgSrc}
               rootClassName={`${className}`}
             />
           )}
