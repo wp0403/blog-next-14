@@ -11,13 +11,15 @@ import {
 import getDataApi from "@/utils/httpClient/request";
 import { changeTreeData, distinctObjectMap } from "@utils/dataUtils";
 import VirtuallyItem from "@components/VirtuallyItem";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./treehole.module.css";
 
 type DateItem = {
   [key: string]: boolean | number | string | any;
 };
 
-export default function TreeHole() {
+const TreeHole = (props) => {
   // 树洞列表
   const [data, setData] = useState<DateItem[]>([]);
   // 当前页
@@ -88,8 +90,13 @@ export default function TreeHole() {
     };
   }, []);
 
+  useChangeLoading({ ...props, name: "tree_hole" });
+
   return (
-    <div className={style.tree_hole} ref={content}>
+    <div
+      className={`${style.tree_hole} ${props.loading && "all-page-loading"}`}
+      ref={content}
+    >
       <div className={style.content}>
         {changeTreeData(data)?.map((v, ind) => (
           <div className={style.item} key={ind}>
@@ -113,4 +120,6 @@ export default function TreeHole() {
       </div>
     </div>
   );
-}
+};
+
+export default withLoading(TreeHole);

@@ -186,6 +186,15 @@ body {
 }
 /* nav end */
 
+/* page loading */
+.all-page-loading{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  opacity: 0;
+}
+
 @media screen and (max-width: 900px) {
   * {
     letter-spacing: 0;

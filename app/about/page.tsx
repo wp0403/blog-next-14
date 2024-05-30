@@ -8,10 +8,12 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@utils/elementUtils";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import aboutImg from "@public/images/about_3.jpg";
 import style from "./about.module.css";
 
-const About = () => {
+const About = (props) => {
   useEffect(() => {
     addNavItemStyle();
     bindHandleScroll();
@@ -22,8 +24,10 @@ const About = () => {
     };
   }, []);
 
+  useChangeLoading({ ...props, name: "about" });
+
   return (
-    <div className={style.about}>
+    <div className={`${style.about} ${props.loading && "all-page-loading"}`}>
       <div className={style.about_content}>
         <div className={style.title}>About</div>
         <Image
@@ -60,4 +64,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default withLoading(About);

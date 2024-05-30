@@ -7,9 +7,11 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@/utils/elementUtils";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./disclaimers.module.css";
- 
-const Disclaimers = () => {
+
+const Disclaimers = (props) => {
   useEffect(() => {
     addNavItemStyle();
     bindHandleScroll();
@@ -19,8 +21,13 @@ const Disclaimers = () => {
       removeScroll();
     };
   }, []);
+
+  useChangeLoading({ ...props, name: "disclaimers" });
+
   return (
-    <div className={style.disclaimers}>
+    <div
+      className={`${style.disclaimers} ${props.loading && "all-page-loading"}`}
+    >
       <div className={style.title}>免责声明</div>
       <div className={style.content}>
         <div className={style.content_title}>
@@ -63,4 +70,4 @@ const Disclaimers = () => {
   );
 };
 
-export default Disclaimers;
+export default withLoading(Disclaimers);

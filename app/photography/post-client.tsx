@@ -13,8 +13,11 @@ import {
 } from "@utils/elementUtils";
 import LazyCom from "@components/LazyCom";
 import PagerComponent from "@components/PagerComponent";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
+import style from "./Photography.module.css";
 
-const Photography = ({ style }) => {
+const Photography = (props) => {
   const dom = useRef<any>(null);
   const content = useRef<any>(null);
   // 列表
@@ -62,10 +65,17 @@ const Photography = ({ style }) => {
     };
   }, []);
 
+  useChangeLoading({ ...props, name: "photography" });
+
   const size = useSize(dom.current);
 
   const randerItem = (v) => (
-    <div className={style.photography_item} key={v.id}>
+    <div
+      className={`${style.photography_item} ${
+        props.loading && "all-page-loading"
+      }`}
+      key={v.id}
+    >
       <div className={style.header}>
         <div className={style.header_top}>
           <div className={style.title}>{v.title}</div>
@@ -95,7 +105,12 @@ const Photography = ({ style }) => {
   );
 
   return (
-    <div className={style.photography} ref={content}>
+    <div
+      className={`${style.photography} ${
+        props.loading ? style.photography_no : ""
+      }`}
+      ref={content}
+    >
       <div className={style.photography_content} ref={dom}>
         <Spin spinning={loading}>
           {data && Boolean(data?.length) && data?.map((v) => randerItem(v))}
@@ -121,4 +136,4 @@ const Photography = ({ style }) => {
   );
 };
 
-export default Photography;
+export default withLoading(Photography);

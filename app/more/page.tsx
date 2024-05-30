@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import {
@@ -8,9 +8,11 @@ import {
   removeScroll,
 } from "@utils/elementUtils";
 import { moreList } from "@/utils/dict";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./more.module.css";
 
-const More = () => {
+const More = (props) => {
   useEffect(() => {
     addNavItemStyle();
     bindHandleScroll();
@@ -20,6 +22,8 @@ const More = () => {
       removeScroll();
     };
   }, []);
+
+  useChangeLoading({ ...props, name: "more" });
 
   const randerItem = (v) => {
     return (
@@ -40,10 +44,10 @@ const More = () => {
   };
 
   return (
-    <div className={style.more}>
+    <div className={`${style.more} ${props.loading && "all-page-loading"}`}>
       <div className={style.content}>{moreList?.map((v) => randerItem(v))}</div>
     </div>
   );
 };
 
-export default More;
+export default withLoading(More);

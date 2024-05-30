@@ -17,9 +17,12 @@ import Permit from "@components/Permit";
 import ClassifyPrevOrNext from "@components/ClassifyPrevOrNext";
 import Comment from "@components/Comment";
 import useMdxComponent from "@components/MdxComponent";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "../blogDetail.module.css";
 
-export default function BlogDetails({ data,source }) {
+const BlogDetails = (props) => {
+  const { data, source } = props;
   const { markdownHtml, tocDom } = useMdxComponent(source);
 
   useEffect(() => {
@@ -31,6 +34,8 @@ export default function BlogDetails({ data,source }) {
       removeScroll();
     };
   }, []);
+
+  useChangeLoading({ ...props, name: "blog_detail" });
 
   const clickOperate = (type) => {
     switch (type) {
@@ -45,7 +50,9 @@ export default function BlogDetails({ data,source }) {
   };
 
   return (
-    <div className={style.blog_detail}>
+    <div
+      className={`${style.blog_detail} ${props.loading && "all-page-loading"}`}
+    >
       <div className={style.blog_detail_box}>
         <div className={style.left_content}>
           <div className={style.operate_box}>
@@ -118,4 +125,6 @@ export default function BlogDetails({ data,source }) {
       </div>
     </div>
   );
-}
+};
+
+export default withLoading(BlogDetails);

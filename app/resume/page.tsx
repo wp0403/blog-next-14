@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import {
   addNavItemStyle,
@@ -15,10 +15,21 @@ import {
   myProject,
   about,
 } from "@utils/dict";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./resume.module.css";
 
-const Resume = () => {
+const Resume = (props) => {
   const [project, setProject] = useState<number[]>([]);
+
+  const clickProject = (v) => {
+    if (project.includes(v)) {
+      setProject((data) => data.filter((v1) => v1 !== v));
+    } else {
+      setProject((data) => [...data, v]);
+    }
+  };
+
   useEffect(() => {
     addNavItemStyle();
     bindHandleScroll();
@@ -29,15 +40,10 @@ const Resume = () => {
     };
   }, []);
 
-  const clickProject = (v) => {
-    if (project.includes(v)) {
-      setProject((data) => data.filter((v1) => v1 !== v));
-    } else {
-      setProject((data) => [...data, v]);
-    }
-  };
+  useChangeLoading({ ...props, name: "resume" });
+
   return (
-    <div className={style.resume}>
+    <div className={`${style.resume} ${props.loading && "all-page-loading"}`}>
       <div className={style.resume_content}>
         <div className={style.title}>Shimmer 🌈</div>
         <div className={style.main}>
@@ -191,4 +197,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default withLoading(Resume);

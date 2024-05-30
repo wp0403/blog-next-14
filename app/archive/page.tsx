@@ -8,9 +8,11 @@ import {
   removeScroll,
 } from "@utils/elementUtils";
 import getData from "@/utils/httpClient/request";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./archive.module.css";
 
-export default function Archive() {
+const Archive = (props) => {
   const [data, setDate] = useState<any[]>([]);
 
   const init = async () => {
@@ -30,8 +32,10 @@ export default function Archive() {
     };
   }, []);
 
+  useChangeLoading({ ...props, name: "archive" });
+
   return (
-    <div className={style.archive}>
+    <div className={`${style.archive} ${props.loading && "all-page-loading"}`}>
       <div className={style.archive_content}>
         {data?.map((v) => {
           return (
@@ -53,4 +57,6 @@ export default function Archive() {
       </div>
     </div>
   );
-}
+};
+
+export default withLoading(Archive);

@@ -8,6 +8,14 @@
   align-items: center;
 }
 
+.photography_no{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  opacity: 0;
+}
+
 .photography_content {
   width: 80%;
   max-width: 1200px;

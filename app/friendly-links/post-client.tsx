@@ -10,9 +10,11 @@ import {
 import { getRandomColor } from "@utils/dataUtils";
 import { LayoutContext } from "@/store/layoutStore";
 import Comment from "@components/Comment";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./friendlyLinks.module.css";
 
-const FriendlyLinks = ({data}) => {
+const FriendlyLinks = (props) => {
   const { theme } = useContext(LayoutContext);
 
   useEffect(() => {
@@ -24,8 +26,15 @@ const FriendlyLinks = ({data}) => {
       removeScroll();
     };
   }, []);
+
+  useChangeLoading({ ...props, name: "friendly_links" });
+
   return (
-    <div className={style.friendly_links}>
+    <div
+      className={`${style.friendly_links} ${
+        props.loading && "all-page-loading"
+      }`}
+    >
       <h1 className={style.title}>友情链接</h1>
       <div className={style.demo}>
         <div className={style.demo_item}>网站名：shimmer</div>
@@ -40,7 +49,7 @@ const FriendlyLinks = ({data}) => {
       </div>
       <div className={style.desc}>不定期清理失效网站，拒绝无效互链。</div>
       <div className={style.content}>
-        {data?.map((v) => (
+        {props?.data?.map((v) => (
           <Link
             key={v.id}
             className={style.blog_item}
@@ -67,4 +76,4 @@ const FriendlyLinks = ({data}) => {
   );
 };
 
-export default FriendlyLinks;
+export default withLoading(FriendlyLinks);

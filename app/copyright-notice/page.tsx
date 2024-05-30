@@ -7,9 +7,11 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@/utils/elementUtils";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./copyrightNotice.module.css";
 
-const CopyrightNotice = () => {
+const CopyrightNotice = (props) => {
   useEffect(() => {
     addNavItemStyle();
     bindHandleScroll();
@@ -19,8 +21,15 @@ const CopyrightNotice = () => {
       removeScroll();
     };
   }, []);
+
+  useChangeLoading({ ...props, name: "copyright_notice" });
+
   return (
-    <div className={style.copyright_notice}>
+    <div
+      className={`${style.copyright_notice} ${
+        props.loading && "all-page-loading"
+      }`}
+    >
       <div className={style.title}>版权声明</div>
       <div className={style.content}>
         <div className={style.p}>
@@ -55,4 +64,4 @@ const CopyrightNotice = () => {
   );
 };
 
-export default CopyrightNotice;
+export default withLoading(CopyrightNotice);

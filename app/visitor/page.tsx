@@ -14,9 +14,11 @@ import { formatDate } from "@/utils/dataUtils";
 import { getRandomColor } from "@utils/dataUtils";
 import getDataApi from "@/utils/httpClient/request";
 import PagerComponent from "@components/PagerComponent";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./visitor.module.css";
 
-const Visitor = () => {
+const Visitor = (props) => {
   const { theme } = useContext(LayoutContext);
   const [list, setList] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -59,8 +61,11 @@ const Visitor = () => {
       removeScroll();
     };
   }, []);
+
+  useChangeLoading({ ...props, name: "visitor" });
+
   return (
-    <div className={style.visitor}>
+    <div className={`${style.visitor} ${props.loading && "all-page-loading"}`}>
       <div className={style.title}>访客列表</div>
       <div className={style.content}>
         <Spin spinning={loading}>
@@ -115,4 +120,4 @@ const Visitor = () => {
   );
 };
 
-export default Visitor;
+export default withLoading(Visitor);

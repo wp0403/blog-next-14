@@ -10,6 +10,8 @@ import {
 } from "@utils/elementUtils";
 import getDataApi from "@utils/httpClient/request";
 import PagerComponent from "@components/PagerComponent";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import styles from "./wallpaper.module.css";
 
 const PostClient = (props) => {
@@ -46,8 +48,12 @@ const PostClient = (props) => {
     };
   }, []);
 
+  useChangeLoading({ ...props, name: "wallpaper" });
+
   return (
-    <div className={styles.wallpaper}>
+    <div
+      className={`${styles.wallpaper} ${props.loading && "all-page-loading"}`}
+    >
       <div className={styles.type_box}>
         {typeList?.map((item) => (
           <div
@@ -102,4 +108,4 @@ const PostClient = (props) => {
   );
 };
 
-export default PostClient;
+export default withLoading(PostClient);

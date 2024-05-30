@@ -15,9 +15,12 @@ import {
 import { useRouter } from "next/navigation";
 import { formatDate, hasUnicode, unicodeToEmoji } from "@utils/dataUtils";
 import getDataApi from "@/utils/httpClient/request";
+import withLoading from "@components/WithLoading";
+import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "../blog.module.css";
 
-export default function BlogDetails({ post }) {
+const BlogDetails = (props) => {
+  const { post } = props;
   const router = useRouter();
   const {
     data,
@@ -68,6 +71,8 @@ export default function BlogDetails({ post }) {
       removeScroll();
     };
   }, []);
+
+  useChangeLoading({ ...props, name: "blog" });
 
   // 渲染单项的样式
   const renderItem = (item) => {
@@ -124,7 +129,7 @@ export default function BlogDetails({ post }) {
   const newData = keyword ? searchList : data;
 
   return (
-    <div className={style.blog}>
+    <div className={`${style.blog} ${props.loading && "all-page-loading"}`}>
       <div className={style.blog_con}>
         {/* <div className={style.blog_left}></div> */}
         <div className={style.blog_list}>
@@ -193,4 +198,6 @@ export default function BlogDetails({ post }) {
       </div>
     </div>
   );
-}
+};
+
+export default withLoading(BlogDetails);
