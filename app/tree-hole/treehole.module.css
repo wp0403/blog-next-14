@@ -52,11 +52,33 @@
   padding-bottom: 8px;
 }
 
-.tree_item_time {
+.tree_item_left{
   width: 86px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tree_item_time {
+  width: 100%;
   color: var(--b-alpha-40);
   letter-spacing: 0;
+}
+
+.tree_item_status {
+  margin-top: 8px;
+  width: 42px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--b-alpha-80);
+  border: 1px solid var(--b-alpha-60);
+  border-radius: 10px;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: bold;
+
 }
 
 .tree_item_type {

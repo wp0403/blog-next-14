@@ -105,7 +105,14 @@ const TreeHole = (props) => {
               <VirtuallyItem key={item.id}>
                 <div className={style.tree_item} key={item.id}>
                   <div className={style.tree_item_top}>
-                    <div className={style.tree_item_time}>{item?.date_str}</div>
+                    <div className={style.tree_item_left}>
+                      <div className={style.tree_item_time}>
+                        {item?.date_str}
+                      </div>
+                      {item?.isTop === 1 && (
+                        <div className={style.tree_item_status}>置顶</div>
+                      )}
+                    </div>
                     <div
                       className={style.tree_item_content}
                       dangerouslySetInnerHTML={{ __html: item.content }}
