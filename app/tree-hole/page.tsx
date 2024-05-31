@@ -110,7 +110,7 @@ const TreeHole = (props) => {
                         {item?.date_str}
                       </div>
                       {item?.isTop === 1 && (
-                        <div className={style.tree_item_status}>置顶</div>
+                        <div className={style.tree_item_status}>置 顶</div>
                       )}
                     </div>
                     <div

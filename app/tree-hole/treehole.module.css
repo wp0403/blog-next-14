@@ -75,7 +75,7 @@
   color: var(--b-alpha-60);
   border: 1px solid var(--b-alpha-60);
   border-radius: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   font-size: 10px;
   font-weight: bold;
 

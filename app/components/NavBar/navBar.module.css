@@ -122,7 +122,8 @@
   width: 100vw;
   height: 100vh;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
   justify-content: flex-end;
   visibility: hidden;
   opacity: 0;

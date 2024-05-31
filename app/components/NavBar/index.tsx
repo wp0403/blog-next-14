@@ -30,6 +30,7 @@ export default function Navbar() {
         }`}
         key={obj?.key}
         href={obj?.href}
+        onClick={() => setActive(false)}
       >
         <SysIcon className={styles.nav_item_icon} type={obj?.icon} />
         <span className={styles.nav_item_title}>{obj?.title}</span>
