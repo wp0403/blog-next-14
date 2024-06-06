@@ -17,8 +17,6 @@ const newsApi = {
   apiRender_news_netease: "/news/netease",
   // 腾讯热搜
   apiRender_news_tencent: "/news/tencent",
-  // bilibili热搜
-  apiRender_news_bilibili: "/news/bilibili",
   // 少数派热搜
   apiRender_news_sspai: "/news/sspai",
   // 抖音热搜
@@ -40,7 +38,6 @@ export const newsApiType = {
   apiRender_news_36kr: "36kr热搜",
   apiRender_news_netease: "网易热搜",
   apiRender_news_tencent: "腾讯热搜",
-  apiRender_news_bilibili: "bilibili热搜",
   apiRender_news_sspai: "少数派热搜",
   apiRender_news_tieba: "百度贴吧热搜",
   apiRender_news_ithome: "it之家热搜",
