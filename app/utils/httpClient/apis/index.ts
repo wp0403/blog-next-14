@@ -4,6 +4,7 @@ import userApi from "./user";
 import photographyApi from "./photography";
 import wallpaperApi from "./wallpaper";
 import newsApi from "./news";
+import videoApi from "./video";
 
 export default {
   ...blogApi,
@@ -12,4 +13,5 @@ export default {
   ...photographyApi,
   ...wallpaperApi,
   ...newsApi,
+  ...videoApi,
 };

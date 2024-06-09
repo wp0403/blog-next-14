@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useUpdate } from "ahooks";
 import { bindHandleScroll, removeScroll } from "@/utils/elementUtils";
@@ -16,6 +16,7 @@ const VirtuallyItem = (props) => {
   const scrollCallback = () => {
     // get position relative to viewport
     const rect = itemRef.current?.getBoundingClientRect();
+
     if (!rect) return;
     const distanceFromTop = rect.top;
     const distanceFromBottom = rect.bottom;
@@ -61,7 +62,9 @@ const VirtuallyItem = (props) => {
       className={style.virtually_item}
       ref={itemRef}
       style={{
-        height: `${itemHeight.current ? `${itemHeight.current}px` : "auto"}`,
+        height:
+          props.height ||
+          `${itemHeight.current ? `${itemHeight.current}px` : "auto"}`,
       }}
     >
       {isVisual && props.children}

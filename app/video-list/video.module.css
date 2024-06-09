@@ -1,0 +1,42 @@
+.video_list {
+  width: 100%;
+  flex: 1;
+  background-color: var(--bg-w-pure);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  width: 60%;
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+}
+
+.video_item{
+  width: 100%;
+  height: calc(100vh - 70px);
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    width: 100%;
+  }
+}

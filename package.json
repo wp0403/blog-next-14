@@ -36,7 +36,8 @@
     "sharp": "^0.33.1",
     "sitemap": "^7.1.1",
     "twikoo": "latest",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "xgplayer": "^3.0.18"
   },
   "devDependencies": {
     "@types/node": "^20",
