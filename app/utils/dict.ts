@@ -1,102 +1,140 @@
 // 网站时间轴
 export const timeAixsList = [
-    {
-        id: 1,
-        time: "2021.06.01",
-        title: "申请域名 wp-boke.work",
-    },
-    {
-        id: 2,
-        time: "2021.08.01",
-        title: "域名备案通过",
-    },
-    {
-        id: 3,
-        time: "2021.11.11",
-        title: "blog第一版发布",
-    },
-    {
-        id: 4,
-        time: "2022.03.11",
-        title: "blog第二版发版",
-    },
-    {
-        id: 5,
-        time: "2023.02.11",
-        title: "NextJS重构，blog第三版预发布，域名 shimmer.wp-boke.work",
-    },
-    {
-        id: 6,
-        time: "2023.03.11",
-        title: "NextJS重构，blog第三版正式发布，转移到正式域名wp-boke.work",
-    },
-    {
-        id: 7,
-        time: "2023.05.05",
-        title: "网站logo正式发布",
-    },
-    {
-        id: 8,
-        time: "2023.05.24",
-        title: "正式上线网站更多页，用于网站新功能开发",
-    },
-    {
-      id: 9,
-      time: "2024.01.24",
-      title: "使用nextjs14重写博客",
+  {
+    id: 1,
+    time: "2021.06.01",
+    title: "申请域名 wp-boke.work",
+  },
+  {
+    id: 2,
+    time: "2021.08.01",
+    title: "域名备案通过",
+  },
+  {
+    id: 3,
+    time: "2021.11.11",
+    title: "blog第一版发布",
+  },
+  {
+    id: 4,
+    time: "2022.03.11",
+    title: "blog第二版发版",
+  },
+  {
+    id: 5,
+    time: "2023.02.11",
+    title: "NextJS重构，blog第三版预发布，域名 shimmer.wp-boke.work",
+  },
+  {
+    id: 6,
+    time: "2023.03.11",
+    title: "NextJS重构，blog第三版正式发布，转移到正式域名wp-boke.work",
+  },
+  {
+    id: 7,
+    time: "2023.05.05",
+    title: "网站logo正式发布",
+  },
+  {
+    id: 8,
+    time: "2023.05.24",
+    title: "正式上线网站更多页，用于网站新功能开发",
+  },
+  {
+    id: 9,
+    time: "2024.01.24",
+    title: "使用nextjs14重写博客",
   },
 ];
 // 职业概述
-export const web_desc = '作为一名Web前端开发工程师，我负责设计、开发和维护Web应用程序的用户界面，使之呈现出美观、易用、高效的特性。我能够熟练运用HTML、CSS、JavaScript等前端技术和工具，同时也具备与UI设计师、后端工程师和产品经理等多个团队成员协作的能力。在我的工作中，我不断学习和跟进前沿技术和最佳实践，以提高开发效率和开发质量。'
+export const web_desc =
+  "作为一名Web前端开发工程师，我负责设计、开发和维护Web应用程序的用户界面，使之呈现出美观、易用、高效的特性。我能够熟练运用HTML、CSS、JavaScript等前端技术和工具，同时也具备与UI设计师、后端工程师和产品经理等多个团队成员协作的能力。在我的工作中，我不断学习和跟进前沿技术和最佳实践，以提高开发效率和开发质量。";
 
 // 技能与工具
 export const skillList = [
-    {
-        id: 1,
-        value: 'HTML、CSS、JavaScript'
-    },
-    {
-        id: 2,
-        value: 'React、Vue.js'
-    },
-    {
-        id: 3,
-        value: 'TypeScript'
-    },
-    {
-        id: 4,
-        value: 'Ant Design、Element UI、Echarts、Antv'
-    },
-    {
-        id: 5,
-        value: 'Redux、Vuex、MobX'
-    },
-    {
-        id: 6,
-        value: 'Node.js、Next.js、Nest.js、Koa、Egg.js'
-    },
-    {
-        id: 7,
-        value: 'Webpack、Babel/Gulp'
-    },
-    {
-        id: 8,
-        value: 'Sass、Less'
-    },
-    {
-        id: 9,
-        value: 'MySQL'
-    },
-    {
-        id: 10,
-        value: 'RESTful API、计算机网络'
-    }
+  {
+    id: 1,
+    value: "HTML、CSS、JavaScript",
+  },
+  {
+    id: 2,
+    value: "React、Vue.js",
+  },
+  {
+    id: 3,
+    value: "TypeScript",
+  },
+  {
+    id: 4,
+    value: "Ant Design、Element UI、Echarts、Antv",
+  },
+  {
+    id: 5,
+    value: "Redux、Vuex、MobX",
+  },
+  {
+    id: 6,
+    value: "Node.js、Next.js、Nest.js、Koa、Egg.js",
+  },
+  {
+    id: 7,
+    value: "Webpack、Babel/Gulp",
+  },
+  {
+    id: 8,
+    value: "Sass、Less",
+  },
+  {
+    id: 9,
+    value: "MySQL",
+  },
+  {
+    id: 10,
+    value: "RESTful API、计算机网络",
+  },
 ];
 
 // 工作经历
 export const workList = [
   {
-    id: 1,
+    id: 1108,
+    companyName: "美团",
+    workTime: "2024.6.17 - 至今",
+    role: "核心本地商业商家前端组/Web前端",
+    place: "北京",
+    operatingDuty: [],
+  },
+  {
+    id: 1109,
+    companyName: "北京国人通教育有限公司",
+    workTime: "2024.4.19 - 2024.6.14",
+    role: "Web前端开发工程师",
+    place: "北京",
+    operatingDuty: [
+      {
+        id: 1,
+        value: "负责主页门户开发，提供iframe嵌入能力，简化门户搭建；",
+      },
+      {
+        id: 2,
+        value: "负责管理端驾驶舱开发，供给租户数据统计查看；",
+      },
+      {
+        id: 3,
+        value: "协助测试团队进行测试，并解决测试过程中的问题和反馈；",
+      },
+      {
+        id: 4,
+        value: "设计和开发Web前端组件，提高开发效率；",
+      },
+      {
+        id: 5,
+        value: "提出业务中存在的问题，优化产品体验。",
+      },
+    ],
+  },
+  {
+    id: 1110,
     companyName: "华兴资本",
     workTime: "2021.8 - 至今",
     role: "Web前端开发工程师",
@@ -134,7 +172,7 @@ export const workList = [
     ],
   },
   {
-    id: 2,
+    id: 1111,
     companyName: "乐纯悠品",
     workTime: "2020.3 - 2021.8",
     role: "Web前端开发工程师",
@@ -175,9 +213,120 @@ export const workList = [
 // 项目经验
 export const projectList = [
   {
-    id: 1,
+    id: 1102,
+    projectName: "学习公社6.0（学员端mobile）",
+    projectTime: "2024.4.19 - 2024.6.14",
+    desc: "国人通内部主要业务平台",
+    lectotype: "react + react-router-dom v6 + mobx",
+    jobOrContribute: [
+      {
+        id: 1,
+        value:
+          "负责大赛各页面开发，在极短的时间内，完成了极大的开发工作，实现了业务的如期交付；",
+      },
+      {
+        id: 2,
+        value:
+          "负责大赛评审页面开发，完成了极其复杂的数据交互，采用单一数据源，规避了pc评审的复杂数据处理使代码维护困难的问题；",
+      },
+      {
+        id: 3,
+        value: "合理的页面拆分，使页面结构清晰，可维护性高。",
+      },
+    ],
+    projectResults: [
+      {
+        id: 2,
+        value: "开发效率高，使业务能如期交付测试，能够提前排查各种问题；",
+      },
+      {
+        id: 3,
+        value: "对于页面细节的把控，使用户的视觉体验更佳；",
+      },
+      {
+        id: 4,
+        value: "代码的可维护性，为后续开发人员提供了很大的便利。",
+      },
+    ],
+  },
+  {
+    id: 1103,
+    projectName: "学习公社6.0（学员端pc）",
+    projectTime: "2024.4.19 - 2024.6.14",
+    desc: "国人通内部主要业务平台",
+    lectotype: "react + react-router-dom v6 + mobx",
+    jobOrContribute: [
+      {
+        id: 1,
+        value: "负责首页门户以及各二级页搭建，提供了功能完善的layout页面；",
+      },
+      {
+        id: 2,
+        value:
+          "封装二级页面配置组件，统一处理各种业务，提供二级页快速搭建能力；",
+      },
+      {
+        id: 3,
+        value: "负责资讯页面编写，合理的代码拆分，提供了页面可维护性。",
+      },
+    ],
+    projectResults: [
+      {
+        id: 2,
+        value: "门户的微交互，受到领导的认可；",
+      },
+      {
+        id: 3,
+        value: "对于页面细节的把控，使门户的视觉体验更佳；",
+      },
+      {
+        id: 4,
+        value: "代码的可维护性，为后续开发人员提供了很大的便利。",
+      },
+    ],
+  },
+  {
+    id: 1104,
+    projectName: "学习公社6.0（管理端）",
+    projectTime: "2024.4.19 - 2024.6.14",
+    desc: "国人通内部主要业务平台",
+    lectotype: "react + react-router-dom v6 + mobx",
+    jobOrContribute: [
+      {
+        id: 1,
+        value: "负责驾驶舱等业务开发，编写通用通知轮播组件；",
+      },
+      {
+        id: 2,
+        value: "使用useMemo拆分各业务块，使页面重绘可控，并提高代码可维护性；",
+      },
+      {
+        id: 3,
+        value: "优化全局ui，使各页面ui规范统一。",
+      },
+    ],
+    projectResults: [
+      {
+        id: 2,
+        value:
+          "应用程序具有功能完备、界面美观、易于使用的特点，受到了用户的积极反馈和认可；",
+      },
+      {
+        id: 3,
+        value:
+          "通过我对接口调试和数据逻辑的统一处理，实现了前后端之间的稳定数据交互，确保了应用的可靠性和性能；",
+      },
+      {
+        id: 4,
+        value:
+          "我提供给团队成员详尽的文档注释和高质量的代码，使得其他开发人员能够轻松理解和维护项目。",
+      },
+    ],
+  },
+  {
+    id: 1105,
     projectName: "Huaxing Ai",
-    projectTime: "2023.7 - 至今",
+    projectTime: "2023.7 - 2024.1.19",
     desc: "华兴ai项目是华兴在公司内部提供人工智能辅助办公的尝试，旨在为员工提供方便快捷的办公平台。",
     lectotype: "Vite + Vue3 + Antd Vue + Pinia",
     jobOrContribute: [
@@ -241,9 +390,9 @@ export const projectList = [
     ],
   },
   {
-    id: 2,
+    id: 1106,
     projectName: "Dashboard",
-    projectTime: "2023.1 - 至今",
+    projectTime: "2023.1 - 2024.1.19",
     desc: "该项目是为公司领导提供数据可视化展示的一个网页，主要用于查看公司各项运营指标和财务指标等信息。",
     lectotype: "Vue3 + Antd Vue + Echarts",
     jobOrContribute: [
@@ -299,9 +448,9 @@ export const projectList = [
     ],
   },
   {
-    id: 3,
+    id: 1107,
     projectName: "Solar移动端",
-    projectTime: "2022.4 - 至今",
+    projectTime: "2022.4 - 2024.1.19",
     desc: "为了方便公司内部员工在移动端的数据查询和筛选，我们在Solar数据中台的基础上开发了移动端应用程序，即Solar移动端。该应用程序使用React技术构建，实现了自适应屏幕布局，能够适应不同尺寸和分辨率的移动设备。",
     lectotype: "UmiJS + React + Antd Mobile + Echarts",
     jobOrContribute: [
@@ -354,9 +503,9 @@ export const projectList = [
     ],
   },
   {
-    id: 4,
+    id: 1108,
     projectName: "Solar (pc)",
-    projectTime: "2021.8 - 至今",
+    projectTime: "2021.8 - 2024.1.19",
     desc: "Solar项目是一个数据中台项目，旨在整合公司的其他数据平台，为客户的数据查询和筛选提供更加高效的解决方案。项目目标是建立一个可扩展、易维护和可靠的数据中台平台，为公司内部员工和外部客户提供高质量的数据服务。为了实现这个目标，Solar项目分为多个阶段，包括需求调研、系统设计、开发实现和测试部署等。项目团队由多个部门和职能组成，成功交付，为公司的数据服务提供了更加高效、便捷和可靠的解决方案。",
     lectotype: "UmiJS + React + Antd + Echarts",
     jobOrContribute: [
@@ -429,7 +578,7 @@ export const projectList = [
     ],
   },
   {
-    id: 5,
+    id: 1109,
     projectName: "乐纯酸奶",
     projectTime: "2020.3 - 2021.8",
     desc: "该项目旨在为乐纯酸奶在线上推广提供支持，通过建立官网介绍页面，让用户更便捷地了解乐纯酸奶的品牌、产品、营养成分等信息。",
@@ -479,7 +628,7 @@ export const projectList = [
     ],
   },
   {
-    id: 6,
+    id: 1110,
     projectName: "乐纯酸奶移动端",
     projectTime: "2020.3 - 2021.8",
     desc: "乐纯酸奶m站是为了便捷销售乐纯酸奶而设计的移动端网站，旨在提供用户在线上购买乐纯酸奶的便捷体验。该项目的主要目标是提高乐纯酸奶的线上销售量，增强品牌的知名度和用户的购买体验。",
@@ -525,7 +674,7 @@ export const projectList = [
     ],
   },
   {
-    id: 7,
+    id: 1111,
     projectName: "乐纯(产品平台)",
     projectTime: "2020.3 - 2021.8",
     desc: "为了方便公司内部人员操作，管理乐纯平台用户权限及管理员权限，开发了一款后台管理系统。",
@@ -588,85 +737,90 @@ export const schoolUndergo = [
 
 // 我的项目
 export const myProject = [
-    {
-        id: 1,
-        projectName: '个人技术博客',
-        projectTime: '2019.10 - 至今',
-        lectotype: 'React + Antd + NextJS + Markdown + SEO',
-        desc: '个人技术博客是我独立开发的博客网站，主要用于记录和分享自己在前端开发、技术学习等方面的心得和经验。该网站采用了Next.js框架进行开发，支持实时编辑和预览。',
-        jobOrAchievement: '我负责了整个博客网站的搭建、页面设计和开发、SEO优化等。在项目中，我实现了博客文章的分类、搜索、评论功能，并采用Egg.js和MySQL搭建了后端，实现了用户注册和登录、文章管理等功能。通过精心的设计和不断的优化，使博客网站具有优秀的用户体验和较高的访问速度。'
-    },
-    {
-        id: 2,
-        projectName: '博客后台管理平台',
-        projectTime: '2019.10 - 至今',
-        lectotype: 'Client：Next.js + React + Ant Design + Umi.js Server：Egg.js + MySQL',
-        desc: '作为一个独立开发者，我想要拥有一个自己的技术博客，来分享自己的技术经验，同时也想要一个方便管理的后台管理平台来对博客内容进行管理。',
-        jobOrAchievement: '我负责了整个项目的设计和开发，并完成了后台管理系统的各项功能，包括文章管理、分类管理、标签管理等。在项目开发过程中，我还使用了git进行版本控制，同时采用了敏捷开发的方式，不断迭代完善，确保项目高质量的交付。'
-    },
-    {
-        id: 3,
-        projectName: 'shimmer-api',
-        projectTime: '2023.6 - 至今',
-        lectotype: 'NestJS',
-        desc: '提供各种接口服务，满足个人项目的需求。',
-        jobOrAchievement: '通过shimmer-api，我为个人项目提供了丰富的接口服务，满足了不同功能模块的需求。利用NestJS技术栈，我可以构建稳定、高性能的后端服务，并通过这些API为个人项目增加更多的功能和交互性。'
-    },
-    {
-        id: 4,
-        projectName: '率土之滨玩家管理平台',
-        projectTime: '2023.3 - 至今',
-        lectotype: 'Client：Umi.js + React + Ant Design Server：Nest.js + MySQL',
-        desc: '《率土之滨》是一款深受玩家喜爱的策略游戏，其中最重要的元素之一是组建团队、社团或公会，共同完成游戏中的任务和挑战。为了提高游戏的可玩性和趣味性，设计一个系统，为《率土之滨》的玩家提供一套成员管理的系统机制，包含任务平台、奖池系统、抽奖系统、人员管理、团队管理、会员管理等功能。',
-        jobOrAchievement: '目前项目刚刚建项，正在持续开发中...'
-    },
+  {
+    id: 1,
+    projectName: "个人技术博客",
+    projectTime: "2019.10 - 至今",
+    lectotype: "React + Antd + NextJS + Markdown + SEO",
+    desc: "个人技术博客是我独立开发的博客网站，主要用于记录和分享自己在前端开发、技术学习等方面的心得和经验。该网站采用了Next.js框架进行开发，支持实时编辑和预览。",
+    jobOrAchievement:
+      "我负责了整个博客网站的搭建、页面设计和开发、SEO优化等。在项目中，我实现了博客文章的分类、搜索、评论功能，并采用Egg.js和MySQL搭建了后端，实现了用户注册和登录、文章管理等功能。通过精心的设计和不断的优化，使博客网站具有优秀的用户体验和较高的访问速度。",
+  },
+  {
+    id: 2,
+    projectName: "博客后台管理平台",
+    projectTime: "2019.10 - 至今",
+    lectotype:
+      "Client：Next.js + React + Ant Design + Umi.js Server：Egg.js + MySQL",
+    desc: "作为一个独立开发者，我想要拥有一个自己的技术博客，来分享自己的技术经验，同时也想要一个方便管理的后台管理平台来对博客内容进行管理。",
+    jobOrAchievement:
+      "我负责了整个项目的设计和开发，并完成了后台管理系统的各项功能，包括文章管理、分类管理、标签管理等。在项目开发过程中，我还使用了git进行版本控制，同时采用了敏捷开发的方式，不断迭代完善，确保项目高质量的交付。",
+  },
+  {
+    id: 3,
+    projectName: "shimmer-api",
+    projectTime: "2023.6 - 至今",
+    lectotype: "NestJS",
+    desc: "提供各种接口服务，满足个人项目的需求。",
+    jobOrAchievement:
+      "通过shimmer-api，我为个人项目提供了丰富的接口服务，满足了不同功能模块的需求。利用NestJS技术栈，我可以构建稳定、高性能的后端服务，并通过这些API为个人项目增加更多的功能和交互性。",
+  },
+  {
+    id: 4,
+    projectName: "率土之滨玩家管理平台",
+    projectTime: "2023.3 - 至今",
+    lectotype: "Client：Umi.js + React + Ant Design Server：Nest.js + MySQL",
+    desc: "《率土之滨》是一款深受玩家喜爱的策略游戏，其中最重要的元素之一是组建团队、社团或公会，共同完成游戏中的任务和挑战。为了提高游戏的可玩性和趣味性，设计一个系统，为《率土之滨》的玩家提供一套成员管理的系统机制，包含任务平台、奖池系统、抽奖系统、人员管理、团队管理、会员管理等功能。",
+    jobOrAchievement: "目前项目刚刚建项，正在持续开发中...",
+  },
 ];
 
 // 自我评价
-export const about = '作为一名热爱前端开发的工程师，我对技术始终保持着敬畏之心，并且不断学习新的知识和技能，以提高自己的技术水平和工作效率。我注重团队合作，乐于分享和交流，能够快速融入团队并且和其他成员良好协作，以达到共同的目标。同时，我有较强的问题解决能力和自主学习能力，在遇到挑战和困难时能够冷静应对，通过不断尝试和探索找到最优解决方案。我希望能够在未来的工作中继续发挥自己的优势，并且不断追求进步和提高。';
+export const about =
+  "作为一名热爱前端开发的工程师，我对技术始终保持着敬畏之心，并且不断学习新的知识和技能，以提高自己的技术水平和工作效率。我注重团队合作，乐于分享和交流，能够快速融入团队并且和其他成员良好协作，以达到共同的目标。同时，我有较强的问题解决能力和自主学习能力，在遇到挑战和困难时能够冷静应对，通过不断尝试和探索找到最优解决方案。我希望能够在未来的工作中继续发挥自己的优势，并且不断追求进步和提高。";
 
 // 更多列表
 export const moreList = [
-    {
-        id: "resume",
-        title: "我的简历",
-        desc: "我的个人简历",
-        url: "/resume",
-    },
-    {
-        id: "visitor",
-        title: "访客列表",
-        desc: "访客的信息",
-        url: "/visitor",
-    },
-    {
-        id: "start-pages",
-        title: "起始页",
-        desc: "替代传统搜索首页，提供更多的可配置设置",
-        url: "https://start.wp-boke.work",
-    },
-    {
-        id: "stats.uptimerobot",
-        title: "页面状态监控",
-        desc: "监控页面的状态，提供实时的预告",
-        url: "https://stats.uptimerobot.com/QxJWAuB6Nx",
-    },
-    {
-        id: "api.wp-boke",
-        title: "api聚合",
-        desc: "聚合常用api，提供私有化部署，完全开源，可用于二次开发",
-        url: "https://api-render.wp-boke.work/",
-    },
-    {
-        id: "image-color.wp-boke",
-        title: "图片色卡提取",
-        desc: "用于上传图片，提取图片色卡",
-        url: "https://image-color.wp-boke.work/",
-    },
-    // {
-    //     id: "audiovisuals",
-    //     title: "音乐&MV",
-    //     desc: "我喜欢的一些音乐和mv",
-    //     url: "/audiovisuals",
-    // },
+  {
+    id: "resume",
+    title: "我的简历",
+    desc: "我的个人简历",
+    url: "/resume",
+  },
+  {
+    id: "visitor",
+    title: "访客列表",
+    desc: "访客的信息",
+    url: "/visitor",
+  },
+  {
+    id: "start-pages",
+    title: "起始页",
+    desc: "替代传统搜索首页，提供更多的可配置设置",
+    url: "https://start.wp-boke.work",
+  },
+  {
+    id: "stats.uptimerobot",
+    title: "页面状态监控",
+    desc: "监控页面的状态，提供实时的预告",
+    url: "https://stats.uptimerobot.com/QxJWAuB6Nx",
+  },
+  {
+    id: "api.wp-boke",
+    title: "api聚合",
+    desc: "聚合常用api，提供私有化部署，完全开源，可用于二次开发",
+    url: "https://api-render.wp-boke.work/",
+  },
+  {
+    id: "image-color.wp-boke",
+    title: "图片色卡提取",
+    desc: "用于上传图片，提取图片色卡",
+    url: "https://image-color.wp-boke.work/",
+  },
+  // {
+  //     id: "audiovisuals",
+  //     title: "音乐&MV",
+  //     desc: "我喜欢的一些音乐和mv",
+  //     url: "/audiovisuals",
+  // },
 ];

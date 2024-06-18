@@ -8,7 +8,6 @@ import {
   removeScroll,
 } from "@utils/elementUtils";
 import getDataApi from "@/utils/httpClient/request";
-import VirtuallyItem from "@components/VirtuallyItem";
 import VideoPlay from "@components/VideoPlay";
 import ScrollComponent from "@components/ScrollComponent";
 import withLoading from "@components/WithLoading";
