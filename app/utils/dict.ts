@@ -741,37 +741,37 @@ export const myProject = [
     id: 1,
     projectName: "个人技术博客",
     projectTime: "2019.10 - 至今",
-    lectotype: "React + Antd + NextJS + Markdown + SEO",
-    desc: "个人技术博客是我独立开发的博客网站，主要用于记录和分享自己在前端开发、技术学习等方面的心得和经验。该网站采用了Next.js框架进行开发，支持实时编辑和预览。",
+    lectotype: "Next.js, React, Ant Design, Markdown, SEO",
+    desc: "独立开发的技术博客平台，采用Next.js搭建，实现了动态内容渲染与静态生成的结合。通过React与Ant Design构建模块化的组件系统，并利用Markdown实现内容的灵活编辑和展示。",
     jobOrAchievement:
-      "我负责了整个博客网站的搭建、页面设计和开发、SEO优化等。在项目中，我实现了博客文章的分类、搜索、评论功能，并采用Egg.js和MySQL搭建了后端，实现了用户注册和登录、文章管理等功能。通过精心的设计和不断的优化，使博客网站具有优秀的用户体验和较高的访问速度。",
+      "主导了全栈开发，涵盖前端页面设计、组件开发、SEO优化，以及后端的Egg.js服务与MySQL数据库集成。实现了复杂的功能模块，如文章分类、全文搜索、用户评论等，并优化了网站性能，提升了用户体验和访问速度。",
   },
   {
     id: 2,
     projectName: "博客后台管理平台",
     projectTime: "2019.10 - 至今",
-    lectotype:
-      "Client：Next.js + React + Ant Design + Umi.js Server：Egg.js + MySQL",
-    desc: "作为一个独立开发者，我想要拥有一个自己的技术博客，来分享自己的技术经验，同时也想要一个方便管理的后台管理平台来对博客内容进行管理。",
+    lectotype: "Next.js, React, Ant Design, Umi.js, Egg.js, MySQL",
+    desc: "为技术博客开发的后台管理系统，支持对文章、分类、标签等内容的高效管理。",
     jobOrAchievement:
-      "我负责了整个项目的设计和开发，并完成了后台管理系统的各项功能，包括文章管理、分类管理、标签管理等。在项目开发过程中，我还使用了git进行版本控制，同时采用了敏捷开发的方式，不断迭代完善，确保项目高质量的交付。",
+      "负责系统架构设计与开发，实现了完整的CRUD功能，并引入了Umi.js进行路由管理和权限控制。使用敏捷开发方法，不断迭代优化项目，确保了高质量交付。同时，通过Git进行版本控制，保障了代码的可追溯性与协作性。",
   },
   {
     id: 3,
     projectName: "shimmer-api",
     projectTime: "2023.6 - 至今",
     lectotype: "NestJS",
-    desc: "提供各种接口服务，满足个人项目的需求。",
+    desc: "基于NestJS框架的API服务平台，为多个个人项目提供后端支持。",
     jobOrAchievement:
-      "通过shimmer-api，我为个人项目提供了丰富的接口服务，满足了不同功能模块的需求。利用NestJS技术栈，我可以构建稳定、高性能的后端服务，并通过这些API为个人项目增加更多的功能和交互性。",
+      "设计并实现了高性能、可扩展的API服务，涵盖用户认证、数据处理等功能模块。通过模块化设计和依赖注入，提升了代码的可维护性，并确保了服务的稳定性和可扩展性。",
   },
   {
     id: 4,
     projectName: "率土之滨玩家管理平台",
     projectTime: "2023.3 - 至今",
-    lectotype: "Client：Umi.js + React + Ant Design Server：Nest.js + MySQL",
-    desc: "《率土之滨》是一款深受玩家喜爱的策略游戏，其中最重要的元素之一是组建团队、社团或公会，共同完成游戏中的任务和挑战。为了提高游戏的可玩性和趣味性，设计一个系统，为《率土之滨》的玩家提供一套成员管理的系统机制，包含任务平台、奖池系统、抽奖系统、人员管理、团队管理、会员管理等功能。",
-    jobOrAchievement: "目前项目刚刚建项，正在持续开发中...",
+    lectotype: "Umi.js, React, Ant Design, Nest.js, MySQL",
+    desc: "为策略游戏《率土之滨》设计的玩家管理系统，包含团队管理、任务平台等核心功能。",
+    jobOrAchievement:
+      "项目处于持续开发中，负责前后端技术选型和架构设计。前端使用Umi.js与React构建组件化界面，后端采用Nest.js与MySQL搭建数据服务。通过模块化开发与持续集成，提高了开发效率和系统可维护性。",
   },
 ];
 
