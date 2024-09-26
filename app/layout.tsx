@@ -1,14 +1,5 @@
-/*
- * @Author: wb_wangpeng32 75709526+wp0403@users.noreply.github.com
- * @Date: 2024-09-26 16:01:24
- * @LastEditors: wb_wangpeng32 75709526+wp0403@users.noreply.github.com
- * @LastEditTime: 2024-09-26 17:10:52
- * @FilePath: /blog-next-14/app/layout.tsx
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import type { Metadata } from "next";
 import { Viewport } from "next";
-import globby from "globby";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LayoutContextProvider } from "@store/layoutStore";
@@ -28,17 +19,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-};
-
-const getCSSFiles = async () => {
-  const paths = await globby("./path/to/your/css/directory/*.css");
-  const cssFiles = paths.map(
-    (path) =>
-      css`
-        @import url(${path});
-      `
-  );
-  return cssFiles;
 };
 
 export default function RootLayout({
