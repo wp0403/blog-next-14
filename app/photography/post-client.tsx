@@ -13,11 +13,9 @@ import {
 } from "@utils/elementUtils";
 import LazyCom from "@components/LazyCom";
 import PagerComponent from "@components/PagerComponent";
-import withLoading from "@components/WithLoading";
-import useChangeLoading from "@components/WithLoading/useChangeLoading";
-import style from "./Photography.module.css";
 
 const Photography = (props) => {
+  const { style } = props;
   const dom = useRef<any>(null);
   const content = useRef<any>(null);
   // 列表
@@ -64,8 +62,6 @@ const Photography = (props) => {
       removeScroll();
     };
   }, []);
-
-  useChangeLoading({ ...props, name: "photography" });
 
   const size = useSize(dom.current);
 
@@ -138,4 +134,4 @@ const Photography = (props) => {
   );
 };
 
-export default withLoading(Photography);
+export default Photography;
