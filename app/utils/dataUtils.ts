@@ -3,10 +3,10 @@
  * @version:
  * @Author: WangPeng
  * @Date: 2022-01-13 11:42:16
- * @LastEditors: WangPeng
- * @LastEditTime: 2023-12-22 10:59:59
+ * @LastEditors: wb_wangpeng32 75709526+wp0403@users.noreply.github.com
+ * @LastEditTime: 2024-09-27 16:06:17
  */
-import Fingerprint2 from "fingerprintjs2";
+import Fingerprint2 from "@fingerprintjs/fingerprintjs";
 import crypto from "crypto";
 import { localGet } from "./local";
 

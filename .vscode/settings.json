@@ -12,5 +12,7 @@
     "eslint.enable": true,
     "eslint.options": {
         "configFile": ".eslintrc.js"
-    }
+    },
+    "commentTranslate.targetLanguage": "zh-CN",
+    "commentTranslate.hover.enabled": true
 }
