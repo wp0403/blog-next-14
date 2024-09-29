@@ -1,4 +1,4 @@
-import getData from "@/utils/httpClient/request";
+import getData from "@utils/httpClient/request";
 import PostClient from "../../blog/[slug]/post-client";
 
 // 动态路由

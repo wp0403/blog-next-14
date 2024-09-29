@@ -1,7 +1,7 @@
 import { serialize } from "next-mdx-remote/serialize";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import getData from "@/utils/httpClient/request";
+import getData from "@utils/httpClient/request";
 import PostClient from "./post-client";
 
 export const dynamicParams = false;

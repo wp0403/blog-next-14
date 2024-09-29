@@ -8,7 +8,7 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@utils/elementUtils";
-import getDataApi from "@/utils/httpClient/request";
+import getDataApi from "@utils/httpClient/request";
 import { changeTreeData, distinctObjectMap } from "@utils/dataUtils";
 import VirtuallyItem from "@components/VirtuallyItem";
 import withLoading from "@components/WithLoading";

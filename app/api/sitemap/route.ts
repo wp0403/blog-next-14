@@ -1,14 +1,6 @@
-/*
- * @Descripttion:
- * @version:
- * @Author: WangPeng
- * @Date: 2023-04-24 15:00:43
- * @LastEditors: WangPeng
- * @LastEditTime: 2023-12-26 17:19:35
- */
 import fs from "fs";
 import { SitemapStream, streamToPromise } from "sitemap";
-import getDataApi from "@/utils/httpClient/request";
+import getDataApi from "@utils/httpClient/request";
 
 export async function GET(req: Request, res: Response) {
   // Create a Sitemap stream

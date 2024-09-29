@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import {
@@ -6,7 +6,7 @@ import {
   bindHandleScroll,
   removeNavItemStyle,
   removeScroll,
-} from "@/utils/elementUtils";
+} from "@utils/elementUtils";
 import withLoading from "@components/WithLoading";
 import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./disclaimers.module.css";

@@ -6,9 +6,9 @@ import {
   bindHandleScroll,
   removeNavItemStyle,
   removeScroll,
-} from "@/utils/elementUtils";
+} from "@utils/elementUtils";
 import { getRandomColor } from "@utils/dataUtils";
-import { LayoutContext } from "@/store/layoutStore";
+import { LayoutContext } from "@store/layoutStore";
 import Comment from "@components/Comment";
 import withLoading from "@components/WithLoading";
 import useChangeLoading from "@components/WithLoading/useChangeLoading";

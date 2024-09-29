@@ -2,17 +2,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useDebounceEffect, useGetState, useMount } from "ahooks";
 import { Spin } from "antd";
-import { LayoutContext } from "@/store/layoutStore";
+import { LayoutContext } from "@store/layoutStore";
 import {
   addNavItemStyle,
   bindHandleScroll,
   removeNavItemStyle,
   removeScroll,
   routeChangeComplete,
-} from "@/utils/elementUtils";
-import { formatDate } from "@/utils/dataUtils";
+} from "@utils/elementUtils";
+import { formatDate } from "@utils/dataUtils";
 import { getRandomColor } from "@utils/dataUtils";
-import getDataApi from "@/utils/httpClient/request";
+import getDataApi from "@utils/httpClient/request";
 import PagerComponent from "@components/PagerComponent";
 import withLoading from "@components/WithLoading";
 import useChangeLoading from "@components/WithLoading/useChangeLoading";

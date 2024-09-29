@@ -7,7 +7,7 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@utils/elementUtils";
-import { moreList } from "@/utils/dict";
+import { moreList } from "@utils/dict";
 import withLoading from "@components/WithLoading";
 import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./more.module.css";

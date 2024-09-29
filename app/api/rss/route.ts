@@ -1,6 +1,6 @@
 import fs from "fs";
 import RSS from "rss";
-import getDataApi from "@/utils/httpClient/request";
+import getDataApi from "@utils/httpClient/request";
 
 export async function GET(req: Request, res: Response) {
   const feed = new RSS({

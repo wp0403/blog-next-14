@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Input, Spin, Empty } from "antd";
 import { useDebounceFn, useGetState } from "ahooks";
@@ -12,9 +13,8 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@utils/elementUtils";
-import { useRouter } from "next/navigation";
 import { formatDate, hasUnicode, unicodeToEmoji } from "@utils/dataUtils";
-import getDataApi from "@/utils/httpClient/request";
+import getDataApi from "@utils/httpClient/request";
 import withLoading from "@components/WithLoading";
 import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "../blog.module.css";
@@ -37,7 +37,7 @@ const BlogDetails = (props) => {
   const [searchPage, setSearchPage, getSearchPage] = useGetState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const getDate = async () => {
+  const getData = async () => {
     if (!keyword || loading) return;
     setLoading(true);
     const posts = await getDataApi({
@@ -55,7 +55,7 @@ const BlogDetails = (props) => {
 
   const { run } = useDebounceFn(
     () => {
-      getDate();
+      getData();
     },
     {
       wait: 500,

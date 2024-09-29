@@ -2,7 +2,7 @@
 import { useGetState, useDebounceEffect, useMount, useSize } from "ahooks";
 import { Image, Spin } from "antd";
 import React, { useEffect, useRef, useState } from "react";
-import getDataApi from "@/utils/httpClient/request";
+import getDataApi from "@utils/httpClient/request";
 import { formatDate } from "@utils/dataUtils";
 import {
   addNavItemStyle,

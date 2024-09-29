@@ -7,7 +7,7 @@ import {
   removeNavItemStyle,
   removeScroll,
 } from "@utils/elementUtils";
-import getData from "@/utils/httpClient/request";
+import getData from "@utils/httpClient/request";
 import withLoading from "@components/WithLoading";
 import useChangeLoading from "@components/WithLoading/useChangeLoading";
 import style from "./archive.module.css";
