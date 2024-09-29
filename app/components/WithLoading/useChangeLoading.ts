@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { sessionSet, sessionGet } from "@utils/local";
 

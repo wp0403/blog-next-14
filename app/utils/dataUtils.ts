@@ -3,10 +3,10 @@
  * @version:
  * @Author: WangPeng
  * @Date: 2022-01-13 11:42:16
- * @LastEditors: wb_wangpeng32 75709526+wp0403@users.noreply.github.com
- * @LastEditTime: 2024-09-27 16:06:17
+ * @LastEditors: shimmer 75709526+wp0403@users.noreply.github.com
+ * @LastEditTime: 2024-09-27 16:35:59
  */
-import Fingerprint2 from "@fingerprintjs/fingerprintjs";
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
 import crypto from "crypto";
 import { localGet } from "./local";
 
@@ -406,16 +406,16 @@ export const readLyricFile = async (url: string) => {
     });
 };
 
-// 生成浏览器指纹
+// 异步函数来获取浏览器的指纹
 export const getFingerprint = async () => {
-  const components = await Promise.all([Fingerprint2.getPromise()]);
-  const fingerprint = Fingerprint2.x64hash128(
-    components
-      .flat(Infinity)
-      .map((component: any) => component.value)
-      .join(""),
-    64
-  );
+  // 首先，使用load方法加载指纹生成器
+  const fp = await FingerprintJS.load();
+
+  // 然后，获取浏览器的指纹
+  const result = await fp.get();
+
+  // result.visitorId 就是浏览器的唯一指纹
+  const fingerprint = result.visitorId;
   return fingerprint;
 };
 
