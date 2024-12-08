@@ -11,7 +11,7 @@ const useChangeLoading = (props) => {
         props.onLoaded();
         sessionSet(`${props.name}_cache`, true);
       },
-      isCache ? 1000 : 1500
+      isCache ? 0 : 1500
     ); // 最少加载时间
 
     return () => clearTimeout(timer);
