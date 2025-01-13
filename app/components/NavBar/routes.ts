@@ -4,7 +4,7 @@
  * @Author: WangPeng
  * @Date: 2023-01-12 14:27:58
  * @LastEditors: WangPeng
- * @LastEditTime: 2023-12-26 17:03:03
+ * @LastEditTime: 2025-01-13 13:01:20
  */
 export const navList = [
   {
@@ -36,6 +36,12 @@ export const navList = [
     href: "/photography",
     icon: "icon-sheying",
     title: "摄影",
+  },
+  {
+    key: "light-shadow-traces",
+    href: "/light-shadow-traces",
+    icon: "icon-sheying",
+    title: "光影足迹",
   },
   {
     key: "friendly-links",

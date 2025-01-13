@@ -53,6 +53,7 @@ const Footer = () => {
                 : "https://img.foreverblog.cn/wormhole_3_tp.gif"
             }
             alt="十年之约-虫洞"
+            unoptimized
           />
         </Link>
         <Link

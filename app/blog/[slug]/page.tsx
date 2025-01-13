@@ -10,16 +10,16 @@ export async function generateStaticParams() {
     config: { next: { revalidate: 6000 } },
   });
 
-  const arr = [] as string[];
+  const arr = [] as { slug: string }[];
   for (let i = 1; i <= posts.data; i++) {
-    arr.push(i.toString());
+    arr.push({ slug: i.toString() });
   }
 
-  return arr.map((v) => ({ slug: v }));
+  return arr;
 }
 
 // 获取数据
-async function getPost(params: { slug: any }) {
+async function getPost(params: { slug: string }) {
   const posts1 = await getData({
     type: "all_blog_PageList",
     config: { next: { revalidate: 6000 } },
@@ -49,6 +49,7 @@ async function getPost(params: { slug: any }) {
 }
 
 export default async function BlogList({ params }) {
+  // 确保异步数据加载
   const post = await getPost(params);
 
   return <PostClient post={post} />;
