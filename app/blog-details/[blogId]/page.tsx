@@ -20,7 +20,8 @@ async function getPost(params: { blogId: string | number }) {
   });
 }
 
-export default async function BlogDetails({ params }) {
+export default async function BlogDetails(props) {
+  const params = await props.params;
   const { data = {} } = await getPost(params);
 
   const source = await serialize(data.content, {

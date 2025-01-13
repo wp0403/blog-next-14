@@ -48,8 +48,8 @@ async function getPost(params: { slug: string }) {
   };
 }
 
-export default async function BlogList({ params }) {
-  // 确保异步数据加载
+export default async function BlogList(props) {
+  const params = await props.params;
   const post = await getPost(params);
 
   return <PostClient post={post} />;
