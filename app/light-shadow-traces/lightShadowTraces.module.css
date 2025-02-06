@@ -1,18 +1,28 @@
 .gallery {
   width: 100%;
   flex: 1;
-  padding-top: 70px;
-  background-color: var(--bg-w-pure);
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(30,30,30,1);
 }
 
-.header{
+.header {
   width: 100%;
+  height: 80vh;
 }
 
-.header_bg{
+.header_content {
+  
+}
+
+.tags{
   width: 100%;
-  height: 450px;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+.content{
+  width: 100%;
+  height: 100vh;
 }

@@ -58,26 +58,18 @@ const LightShadowTraces = (props) => {
   );
 
   useEffect(() => {
-    addNavItemStyle();
     bindHandleScroll();
 
     return () => {
-      removeNavItemStyle();
       removeScroll();
     };
   }, []);
 
-  useChangeLoading({ ...props, name: "photography" });
+  useChangeLoading({ ...props, name: "light-shadow-traces" });
   return (
     <div className={styles.gallery}>
       <header className={styles.header}>
-        <Image
-          className={styles.header_bg}
-          src={bgImg}
-          alt="光影足迹"
-          width={1000}
-          height={450}
-        />
+        <div className={styles.header_content}></div>
       </header>
       <div className={styles.tags}></div>
       <div className={styles.content}>
