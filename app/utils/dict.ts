@@ -99,7 +99,7 @@ export const workList = [
   {
     id: 1108,
     companyName: "北京三快在线科技有限公司",
-    workTime: "2024.6 - 至今",
+    workTime: "2024.4 - 至今",
     role: "Web前端开发工程师",
     place: "北京",
     operatingDuty: [
@@ -122,34 +122,6 @@ export const workList = [
         id: 4,
         value:
           "与产品经理、UI设计师和后端开发团队紧密合作，确保项目按时交付并满足业务需求。",
-      },
-    ],
-  },
-  {
-    id: 1109,
-    companyName: "北京国人通教育科技有限公司",
-    workTime: "2024.4 - 2024.6",
-    role: "Web前端开发工程师",
-    place: "北京",
-    operatingDuty: [
-      {
-        id: 1,
-        value:
-          "负责主页门户开发，提供iframe嵌入能力，简化门户搭建，提升开发效率30%；",
-      },
-      {
-        id: 2,
-        value:
-          "负责管理端驾驶舱开发，提供用户数据统计查看功能，提升数据可视化效果；",
-      },
-      {
-        id: 3,
-        value: "设计和开发Web前端组件，提高代码复用率，减少维护成本15%；",
-      },
-      {
-        id: 4,
-        value:
-          "与UI设计师和产品经理合作，确保网站的外观和功能符合设计要求和用户期望。",
       },
     ],
   },
@@ -215,8 +187,8 @@ export const workList = [
 export const projectList = [
   {
     id: 1112,
-    projectName: "鲁班移动端MRN",
-    projectTime: "2024.6 - 至今",
+    projectName: "大客户管理系统（mobile）",
+    projectTime: "2024.4 - 至今",
     desc: "美团内部用于大客户管理的核心工具，涵盖销售、运营、数据分析等模块，使用内部MRN框架重构vue2，优化用户体验。",
     lectotype: "React Native + Redux + TypeScript + 美团MRN框架",
     jobOrContribute: [
@@ -250,8 +222,8 @@ export const projectList = [
   },
   {
     id: 1113,
-    projectName: "大客系统（鲁班PC端）",
-    projectTime: "2024.6 - 至今",
+    projectName: "大客户管理系统（ PC ）",
+    projectTime: "2024.4 - 至今",
     desc: "美团面向大客户的管理平台，支持客户信息管理、数据分析、合同管理等功能，旨在提升系统可维护性与开发效率，同时优化用户体验。",
     lectotype: "Vue2 + TypeScript + MTD（美团UI组件库） + 低代码配置化",
     jobOrContribute: [
@@ -284,116 +256,6 @@ export const projectList = [
       {
         id: 3,
         value: "获得了业务方的高度认可，提升了项目的整体质量和影响力。",
-      },
-    ],
-  },
-  {
-    id: 1102,
-    projectName: "学习公社6.0（学员端pc）",
-    projectTime: "2024.4 - 2024.6",
-    desc: "学员端PC平台，提供在线学习、课程管理等功能。",
-    lectotype: "React + React Router Dom v6 + Mobx",
-    jobOrContribute: [
-      {
-        id: 1,
-        value: "负责首页门户以及各二级页搭建，提供功能完善的layout页面；",
-      },
-      {
-        id: 2,
-        value:
-          "封装二级页面配置组件，统一处理各种业务，提供二级页快速搭建能力；",
-      },
-      {
-        id: 3,
-        value: "负责资讯页面编写，合理拆分代码，提升页面可维护性。",
-      },
-    ],
-    projectResults: [
-      {
-        id: 1,
-        value: "成功搭建了学员端PC平台的首页门户和二级页面，提升了开发效率；",
-      },
-      {
-        id: 2,
-        value: "通过代码拆分和组件封装，提高了页面的可维护性和扩展性；",
-      },
-      {
-        id: 3,
-        value: "确保了项目的按时交付，满足了业务需求。",
-      },
-    ],
-  },
-  {
-    id: 1103,
-    projectName: "学习公社6.0（学员端mobile）",
-    projectTime: "2024.4 - 2024.6",
-    desc: "学员端移动端应用，适配多种移动设备。",
-    lectotype: "React + React Router Dom v6 + Mobx",
-    jobOrContribute: [
-      {
-        id: 1,
-        value:
-          "负责大赛各页面开发，在极短时间内完成大量开发任务，确保业务如期交付；",
-      },
-      {
-        id: 2,
-        value:
-          "负责大赛评审页面开发，采用单一数据源，规避复杂数据处理，提升代码可维护性；",
-      },
-      {
-        id: 3,
-        value: "合理拆分页面代码，使页面结构清晰，便于后续维护。",
-      },
-    ],
-    projectResults: [
-      {
-        id: 1,
-        value: "在短时间内完成了大量开发任务，确保了项目的按时交付；",
-      },
-      {
-        id: 2,
-        value: "通过优化代码结构，提高了代码的可维护性和可读性；",
-      },
-      {
-        id: 3,
-        value: "确保了应用在多种移动设备上的适配性和稳定性。",
-      },
-    ],
-  },
-  {
-    id: 1104,
-    projectName: "学习公社6.0（管理端）",
-    projectTime: "2024.4 - 2024.6",
-    desc: "学员端移动端应用，适配多种移动设备。",
-    lectotype: "React + React Router Dom v6 + Mobx",
-    jobOrContribute: [
-      {
-        id: 1,
-        value:
-          "负责大赛各页面开发，在极短时间内完成大量开发任务，确保业务如期交付；",
-      },
-      {
-        id: 2,
-        value:
-          "负责大赛评审页面开发，采用单一数据源，规避复杂数据处理，提升代码可维护性；",
-      },
-      {
-        id: 3,
-        value: "合理拆分页面代码，使页面结构清晰，便于后续维护。",
-      },
-    ],
-    projectResults: [
-      {
-        id: 1,
-        value: "在短时间内完成了大量开发任务，确保了项目的按时交付；",
-      },
-      {
-        id: 2,
-        value: "通过优化代码结构，提高了代码的可维护性和可读性；",
-      },
-      {
-        id: 3,
-        value: "确保了应用在多种移动设备上的适配性和稳定性。",
       },
     ],
   },
