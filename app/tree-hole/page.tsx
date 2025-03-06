@@ -28,6 +28,8 @@ const TreeHole = (props) => {
   const [page_size, setPageSize] = useState<number>(20);
   const [loading, setLoading] = useGetState<boolean>(false);
   const [totalPages, setTotalPages, getTotalPages] = useGetState<number>(0);
+  // 添加初始化状态
+  const [initialized, setInitialized] = useState<boolean>(false);
 
   const content = useRef<any>(null);
 
@@ -41,10 +43,20 @@ const TreeHole = (props) => {
     setData((a) => distinctObjectMap([...a, ...posts.data], "id"));
     getPage() === 1 && setTotalPages(posts.meta.total_pages);
     setLoading(false);
+    // 第一次数据加载完成后设置初始化状态
+    if (!initialized) {
+      // 使用 requestAnimationFrame 确保 DOM 更新后再设置状态
+      requestAnimationFrame(() => {
+        setInitialized(true);
+      });
+    }
   };
 
   // 滚动事件
   const scrollFun = () => {
+    // 如果还未初始化完成，不处理滚动
+    if (!initialized) return;
+
     // 滚动盒子
     const scrollBox = layoutContent();
     const scrollConBox = content.current;
@@ -94,7 +106,11 @@ const TreeHole = (props) => {
 
   return (
     <div
-      className={`${style.tree_hole} ${props.loading && "all-page-loading"}`}
+      className={`${style.tree_hole} ${props.loading && "all-page-loading"} ${
+        !initialized
+          ? "opacity-0"
+          : "opacity-100 transition-opacity duration-300"
+      }`}
       ref={content}
     >
       <div className={style.content}>

@@ -5,6 +5,12 @@
   background-color: var(--bg-w-pure);
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tree_hole.opacity-100 {
+  opacity: 1;
 }
 
 .content {
