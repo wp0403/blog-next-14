@@ -52,7 +52,8 @@ async function getPost({ params }) {
   };
 }
 
-export default async function BlogList({ params }) {
+export default async function BlogList(props) {
+  const params = await props.params;
   const post = await getPost(params);
 
   return <PostClient post={post} />;

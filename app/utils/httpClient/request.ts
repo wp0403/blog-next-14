@@ -8,15 +8,20 @@ const baseObj = {
 
 type ApiKey = keyof typeof apis;
 
+const TIMEOUT_DURATION = 10000; // 10 seconds timeout
+
 /**
  * 请求数据
  */
 const getData = async ({
   type,
   params = null,
-  config = { next: { revalidate: 3600 } },
-}: // config = { cache: "force-cache" },
-{
+  config = { 
+    next: { 
+      revalidate: 3600 // Cache for 1 hour
+    }
+  },
+}: {
   type: ApiKey;
   params?: { [key: string]: any } | null | undefined;
   config?: RequestInit | undefined;
@@ -25,14 +30,34 @@ const getData = async ({
     const BASE_URL = baseObj[type.split("_")[0]];
     const queryString = params ? `?${objectToQueryString(params)}` : "";
     const url = `${BASE_URL}${apis[type]}${queryString}`;
-    const response = await fetch(url, config);
+
+    // Create AbortController for timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_DURATION);
+
+    const response = await fetch(url, {
+      ...config,
+      signal: controller.signal,
+      headers: {
+        ...config?.headers,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    clearTimeout(timeoutId);
+
     if (!response.ok) {
-      throw new Error(`Network response was not ok: ${response.status}`);
+      throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`);
     }
-    return await response.json();
+
+    const data = await response.json();
+    return data;
   } catch (error) {
+    if (error.name === 'AbortError') {
+      throw new Error(`Request timeout after ${TIMEOUT_DURATION}ms`);
+    }
     console.error("Error fetching data:", error);
-    throw error; // re-throw the error to propagate it to the caller
+    throw error;
   }
 };
 

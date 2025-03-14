@@ -13,7 +13,7 @@ const VirtuallyItem = (props) => {
   // 判断当前元素是否在可视窗口
   const [isVisual, setIsVisual] = useState<boolean>(true);
 
-  const scrollCallback = () => {
+  const scrollCallback = useCallback(() => {
     // get position relative to viewport
     const rect = itemRef.current?.getBoundingClientRect();
 
@@ -31,22 +31,29 @@ const VirtuallyItem = (props) => {
     } else {
       setIsVisual(false);
     }
-  };
+  }, []);
 
   const windowResize = useCallback(() => {
-    itemHeight.current = null;
-    update();
-  }, []);
+    if (itemRef.current) {
+      const newHeight = itemRef.current.offsetHeight;
+      if (newHeight > 0) {
+        itemHeight.current = newHeight;
+        update();
+      }
+    }
+  }, [update]);
 
   useEffect(() => {
     bindHandleScroll(scrollCallback);
     window.addEventListener("resize", windowResize);
+    // 初始化时执行一次检查
+    scrollCallback();
 
     return () => {
       removeScroll(scrollCallback);
       window.removeEventListener("resize", windowResize);
     };
-  }, [windowResize]);
+  }, [scrollCallback, windowResize]);
 
   useEffect(() => {
     if (
@@ -62,9 +69,7 @@ const VirtuallyItem = (props) => {
       className={style.virtually_item}
       ref={itemRef}
       style={{
-        height:
-          props.height ||
-          `${itemHeight.current ? `${itemHeight.current}px` : "auto"}`,
+        height: itemHeight.current ? `${itemHeight.current}px` : "auto",
       }}
     >
       {isVisual && props.children}

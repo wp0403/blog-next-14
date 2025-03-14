@@ -36,19 +36,19 @@ const TreeHole = (props) => {
   const getDate = async () => {
     if (getTotalPages() !== 0 && getTotalPages() < getPage()) return;
     setLoading(true);
-    const posts = await getDataApi({
-      type: "all_secret_List",
-      params: { page: getPage(), page_size: page_size },
-    });
-    setData((a) => distinctObjectMap([...a, ...posts.data], "id"));
-    getPage() === 1 && setTotalPages(posts.meta.total_pages);
-    setLoading(false);
-    // 第一次数据加载完成后设置初始化状态
-    if (!initialized) {
-      // 使用 requestAnimationFrame 确保 DOM 更新后再设置状态
-      requestAnimationFrame(() => {
-        setInitialized(true);
+    try {
+      const posts = await getDataApi({
+        type: "all_secret_List",
+        params: { page: getPage(), page_size: page_size },
       });
+      setData((a) => distinctObjectMap([...a, ...posts.data], "id"));
+      getPage() === 1 && setTotalPages(posts.meta.total_pages);
+    } catch (error) {
+      console.error('Failed to fetch data:', error);
+    } finally {
+      setLoading(false);
+      // 无论成功失败，都设置初始化状态为 true
+      setInitialized(true);
     }
   };
 
@@ -107,10 +107,8 @@ const TreeHole = (props) => {
   return (
     <div
       className={`${style.tree_hole} ${props.loading && "all-page-loading"} ${
-        !initialized
-          ? "opacity-0"
-          : "opacity-100 transition-opacity duration-300"
-      }`}
+        loading ? "opacity-50" : "opacity-100"
+      } transition-opacity duration-300`}
       ref={content}
     >
       <div className={style.content}>

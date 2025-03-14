@@ -12,25 +12,50 @@ type Props = {
   width: number | string;
   className?: string;
   reset?: object;
+  onError?: () => void;
 };
 
+const shimmer = (w: number, h: number) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#f6f7f8" offset="0%" />
+      <stop stop-color="#edeef1" offset="20%" />
+      <stop stop-color="#f6f7f8" offset="40%" />
+      <stop stop-color="#f6f7f8" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#f6f7f8" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str: string) =>
+  typeof window === "undefined"
+    ? Buffer.from(str).toString("base64")
+    : window.btoa(str);
+
 const LazyCom = (props: Props) => {
-  const { className, imgSrc, domKey, width, reset = {} } = props;
+  const { className, imgSrc, domKey, width, reset = {}, onError } = props;
   const ref = useRef(null);
   const backgroundColor = useRef<string>(getRandomColor());
-  const [src, setSrc] = useState<string>();
-  const [inViewport] = useInViewport(ref);
   const [isLoad, setIsLoad] = useState<boolean>(false);
   const [isAntdLoad, setIsAntdLoad] = useState<boolean>(false);
   const [isBrowser, setIsBrowser] = useState<boolean>(false);
+  const [hasError, setHasError] = useState<boolean>(false);
+  const [inViewport] = useInViewport(ref);
 
   useEffect(() => {
     setIsBrowser(true);
   }, []);
 
-  useEffect(() => {
-    inViewport && !src && !isLoad && setSrc(imgSrc);
-  }, [imgSrc, inViewport, src, isLoad]);
+  const handleError = () => {
+    setHasError(true);
+    onError?.();
+  };
+
+  const numericWidth = typeof width === "string" ? parseInt(width) : width;
+
   return (
     <span
       className={`${className} ${style.lazyImg}`}
@@ -41,18 +66,24 @@ const LazyCom = (props: Props) => {
         height: width,
       }}
     >
-      {src && (
+      {inViewport && !hasError && (
         <>
           <Image
             className={`${className} ${style.photography_image}`}
-            width={300}
-            height={300}
+            width={numericWidth}
+            height={numericWidth}
             alt=""
             onLoad={() => {
               !isLoad && setIsLoad(true);
             }}
+            onError={handleError}
             src={imgSrc}
             quality={100}
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(numericWidth, numericWidth)
+            )}`}
+            priority={inViewport}
             {...reset}
           />
           {isLoad && (
@@ -63,29 +94,60 @@ const LazyCom = (props: Props) => {
               onLoad={() => {
                 setIsAntdLoad(true);
               }}
-              preview={isAntdLoad}
+              onError={handleError}
+              preview={{
+                toolbarRender: () => null,
+                imageRender: () => (
+                  <img
+                    src={imgSrc}
+                    style={{
+                      maxWidth: 'none',
+                      maxHeight: 'none',
+                      objectFit: 'contain',
+                    }}
+                    alt=""
+                  />
+                ),
+              }}
               alt=""
               src={imgSrc}
               rootClassName={`${className}`}
+              fallback="/images/image-error.png"
             />
           )}
         </>
       )}
-      {!isLoad && (
+      {(!isLoad || hasError) && (
         <div
           className={`${className} ${style.photography_image_div} ${
-            src && style.photography_image_pa
-          }`}
+            inViewport && !hasError && style.photography_image_pa
+          } ${hasError && style.photography_image_error}`}
           style={
             isBrowser
               ? {
-                  backgroundColor: backgroundColor.current,
+                  backgroundColor: hasError ? "#fafafa" : backgroundColor.current,
                   width: width,
                   height: width,
                 }
               : {}
           }
-        />
+        >
+          {hasError && (
+            <div className={style.error_message}>
+              图片加载失败
+              <button
+                onClick={() => {
+                  setHasError(false);
+                  setIsLoad(false);
+                  setIsAntdLoad(false);
+                }}
+                className={style.retry_button}
+              >
+                重试
+              </button>
+            </div>
+          )}
+        </div>
       )}
     </span>
   );

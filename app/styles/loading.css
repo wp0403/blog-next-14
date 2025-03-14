@@ -16,7 +16,7 @@
 }
 
 .preloader_box_none{
-  animation: none 0.3s ease-out;
+  animation: hideElement 0.3s ease-out;
   animation-fill-mode: forwards; 
 }
 
@@ -185,7 +185,7 @@
   }
 }
 
-@keyframes none {
+@keyframes hideElement {
   0% {
     display: block;
   }

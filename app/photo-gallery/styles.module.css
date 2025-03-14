@@ -1,0 +1,247 @@
+.container {
+  width: 100%;
+  flex: 1;
+  padding-top: 70px;
+  background-color: var(--bg-w-pure);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 90%;
+  max-width: 1400px;
+  flex: 1;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.gallery_item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery_item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.image_container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.next_image_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cover_image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery_item:hover .cover_image {
+  transform: scale(1.05);
+}
+
+.image_preview_mask {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(2px);
+}
+
+.image_overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gallery_item:hover .image_overlay {
+  opacity: 1;
+}
+
+.image_count {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.image_count::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.item_info {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--b-alpha-90);
+  margin: 0 0 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.place {
+  font-size: 12px;
+  color: var(--b-alpha-60);
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: var(--purple-primary-hover);
+}
+
+.time {
+  font-size: 12px;
+  color: var(--b-alpha-60);
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--b-alpha-70);
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.empty_message {
+  text-align: center;
+  padding: 40px;
+  color: var(--b-alpha-60);
+  font-size: 16px;
+}
+
+.error_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.error_message {
+  color: #ff4d4f;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.retry_button {
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry_button:hover {
+  background-color: #40a9ff;
+}
+
+.pagination {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid_container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .item_info {
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+
+  .image_container {
+    aspect-ratio: 3/2;
+  }
+}
+
+@media (hover: none) {
+  .image_overlay {
+    opacity: 1;
+  }
+} 

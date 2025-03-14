@@ -3,8 +3,8 @@
  * @version:
  * @Author: WangPeng
  * @Date: 2023-01-12 14:27:58
- * @LastEditors: WangPeng
- * @LastEditTime: 2023-12-26 17:03:03
+ * @LastEditors: shimmer 75709526+wp0403@users.noreply.github.com
+ * @LastEditTime: 2025-03-14 14:09:30
  */
 export const navList = [
   {
@@ -32,8 +32,8 @@ export const navList = [
     title: "树洞",
   },
   {
-    key: "photography",
-    href: "/photography",
+    key: "photo-gallery",
+    href: "/photo-gallery",
     icon: "icon-sheying",
     title: "摄影",
   },

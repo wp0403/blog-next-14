@@ -1,4 +1,5 @@
-.virtually_item{
+.virtually_item {
     display: inline-block;
     width: 100%;
+    contain: content;
 }
